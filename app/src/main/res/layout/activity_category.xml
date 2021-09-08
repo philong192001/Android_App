@@ -36,7 +36,10 @@
          <requestFocus />
      </EditText>-->
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
     <TextView
         android:id="@+id/textView"
         android:layout_width="152dp"
@@ -57,6 +60,8 @@
         android:layout_marginEnd="317dp"
         android:layout_marginBottom="588dp"
         app:srcCompat="@drawable/user" />
+</LinearLayout>
+
 
     <Button
         android:id="@+id/button"
