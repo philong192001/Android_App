@@ -11,10 +11,10 @@
         android:theme="@style/Theme.AppCovid">
         <activity
             android:name=".InfoEmp"
+            android:name=".CategoryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
