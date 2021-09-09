@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bnav_home_fragment"
+        android:icon="@drawable/ic_home_24"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bnav_health_fragment"
+        android:icon="@drawable/ic_health_24"
+        android:title="Sức khỏe"
+        app:showAsAction="always" />
+    <item
+        android:title=" "
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bnav_feedback_fragment"
+        android:icon="@drawable/ic_feedback_24"
+        android:title="Phản ánh"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bnav_category_fragment"
+        android:icon="@drawable/ic_category_24"
+        android:title="Danh mục"
+        app:showAsAction="always" />
+</menu>
