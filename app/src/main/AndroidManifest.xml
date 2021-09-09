@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCovid">
         <activity
-            android:name=".InfoEmp"
             android:name=".CategoryActivity"
             android:exported="true">
             <intent-filter>
