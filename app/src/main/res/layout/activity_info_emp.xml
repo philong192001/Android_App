@@ -1,183 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoEmp"
-    android:orientation="vertical">
+    tools:context=".InfoEmp">
 
-    <TextView
+<ScrollView
+    android:id="@+id/scrollVieww"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Họ Và Tên *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginTop="20sp"/>
-    <EditText
-        android:id="@+id/mal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Họ Và Tên "
-        android:inputType="text"
-        android:textColor="#000"
-        android:padding="3dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ngày tháng năm sinh *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginTop="15sp"/>
-    <EditText
-        android:id="@+id/usrusr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ngày/tháng/năm(VD:08/03/2020)"
-        android:inputType="datetime"
-        android:textColor="#000"
-        android:padding="3dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="5sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Giới Tính *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"
-        />
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="35sp">
-        <RadioButton android:id="@+id/radio_pirates"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nam"
-            android:onClick="onRadioButtonClicked"
-            android:layout_marginRight="10sp"/>
-        <RadioButton android:id="@+id/radio_ninjas"
-            android:layout_width="wrap_content"
+            android:text="Họ Và Tên *"
+            android:textSize="15dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="20sp"/>
+        <EditText
+            android:id="@+id/mal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nữ"
-            android:onClick="onRadioButtonClicked"
+            android:hint="Họ Và Tên "
+            android:inputType="text"
+            android:textColor="#000"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
             />
-    </RadioGroup>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số CMTND/CCCD/Hộ chiếu *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"/>
-    <EditText
-        android:id="@+id/pswd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CMTND/CCCD/Hộ chiếu"
-        android:inputType="text"
-        android:textColor="#000"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="5sp"
-        android:padding="3dp"
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ngày tháng năm sinh *"
+            android:textSize="15dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="15sp"/>
+        <EditText
+            android:id="@+id/usrusr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày/tháng/năm(VD:08/03/2020)"
+            android:inputType="datetime"
+            android:textColor="#000"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5sp"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giới Tính *"
+            android:textSize="15dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="15sp"
+            />
 
-        />
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="35sp">
+            <RadioButton android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:onClick="onRadioButtonClicked"
+                android:layout_marginRight="10sp"/>
+            <RadioButton android:id="@+id/radio_ninjas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ"
+                android:onClick="onRadioButtonClicked"
+                />
+        </RadioGroup>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số CMTND/CCCD/Hộ chiếu *"
+            android:textSize="15dp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="25sp"/>
+        <EditText
+            android:id="@+id/pswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CMTND/CCCD/Hộ chiếu"
+            android:inputType="text"
+            android:textColor="#000"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5sp"
+            android:padding="3dp"
+            />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <!--    <EditText-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:hint="Quốc Tịch *"-->
+        <!--        android:inputType="text"-->
+        <!--        android:background="#f0f0f4"-->
+        <!--        android:textColor="#000"-->
+        <!--        android:layout_marginTop="5dp"-->
+        <!--        android:layout_marginBottom="20dp"-->
+        <!--        android:layout_marginLeft="20dp"-->
+        <!--        android:layout_marginRight="20dp"-->
+        <!--        android:padding="3dp"-->
+        <!--        android:drawablePadding="16dp"/>-->
 
-<!--    <EditText-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="Quốc Tịch *"-->
-<!--        android:inputType="text"-->
-<!--        android:background="#f0f0f4"-->
-<!--        android:textColor="#000"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:padding="3dp"-->
-<!--        android:drawablePadding="16dp"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa Chỉ Hiện Tại *"
+            android:textSize="15dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginRight="20dp" />
+        <Spinner
+            android:id="@+id/spinner_province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="25sp"
+            android:spinnerMode="dropdown"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <Spinner
+            android:id="@+id/spinner_district"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="25sp"
+            android:spinnerMode="dropdown"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <Spinner
+            android:id="@+id/spinner_wards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="25sp"
+            android:spinnerMode="dropdown"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số nhà, đường,...."
+            android:inputType="text"
+            android:textColor="#000"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="3dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại *"
+            android:textSize="15dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="15sp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số điện thoại"
+            android:inputType="text"
+            android:textColor="#000"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:padding="3dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"></TableRow>
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="15sp"
+            android:hint="Tôi cam kết các thông tin khai là đúng sự thật và đồng ý với Điều khoản sử dụng" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Đồng Ý"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textColor="@color/white"
+            android:background="@color/black"/>
+    </LinearLayout>
+</ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Địa Chỉ Hiện Tại *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginRight="20dp" />
-    <Spinner
-        android:id="@+id/spinner_province"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30sp"
-        android:layout_marginTop="25sp"
-        android:spinnerMode="dropdown"/>
-    <Spinner
-        android:id="@+id/spinner_district"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30sp"
-        android:layout_marginTop="25sp"
-        android:spinnerMode="dropdown"/>
-    <Spinner
-        android:id="@+id/spinner_wards"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30sp"
-        android:layout_marginTop="25sp"
-        android:spinnerMode="dropdown"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Số nhà, đường,...."
-        android:inputType="text"
-        android:textColor="#000"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:padding="3dp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số điện thoại *"
-        android:textSize="15dp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginTop="5sp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Số điện thoại"
-        android:inputType="text"
-        android:textColor="#000"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="20dp"
-        android:padding="3dp" />
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_column="2"
-        android:layout_marginLeft="10sp"
-        android:layout_marginRight="10sp"
-        android:layout_marginBottom="10sp"
-        android:hint="Tôi cam kết các thông tin khai là đúng sự thật và đồng ý với Điều khoản sử dụng" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Đồng Ý"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
 
 <!--        <com.github.florent37.materialtextfield.MaterialTextField-->
 <!--            android:layout_width="400dp"-->
@@ -222,4 +290,4 @@
 <!--                android:textColor="#333"-->
 <!--                android:textSize="15sp" />-->
 <!--        </com.github.florent37.materialtextfield.MaterialTextField>-->
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

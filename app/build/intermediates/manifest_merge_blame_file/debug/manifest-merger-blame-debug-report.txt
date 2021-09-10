@@ -30,8 +30,8 @@
 20-->D:\ProjectSem4\AppCovid\app\src\main\AndroidManifest.xml:11:9-46
 21        <activity
 21-->D:\ProjectSem4\AppCovid\app\src\main\AndroidManifest.xml:12:9-20:20
-22            android:name="com.example.appcovid.InfoEmp"
-22-->D:\ProjectSem4\AppCovid\app\src\main\AndroidManifest.xml:13:13-36
+22            android:name="com.example.appcovid.MainActivity"
+22-->D:\ProjectSem4\AppCovid\app\src\main\AndroidManifest.xml:13:13-41
 23            android:exported="true" >
 23-->D:\ProjectSem4\AppCovid\app\src\main\AndroidManifest.xml:14:13-36
 24            <intent-filter>

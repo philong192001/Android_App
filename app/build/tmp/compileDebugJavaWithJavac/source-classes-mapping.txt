@@ -1,8 +1,8 @@
 com/example/appcovid/BuildConfig.java
  com.example.appcovid.BuildConfig
-com/example/appcovid/MainActivity.java
- com.example.appcovid.MainActivity
 com/example/appcovid/CategoryActivity.java
  com.example.appcovid.CategoryActivity
 com/example/appcovid/InfoEmp.java
  com.example.appcovid.InfoEmp
+com/example/appcovid/MainActivity.java
+ com.example.appcovid.MainActivity
