@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Wellcome to Covit"
+        android:text="Khai báo y tế online"
         android:textColor="@color/purple_500"
         android:textSize="30dp"
 
@@ -53,7 +53,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
         android:ems="10"
-        android:hint="My Phone"
+        android:hint="Số điện thoại cá nhân"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +71,7 @@
         android:text="Xác nhận"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_phone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

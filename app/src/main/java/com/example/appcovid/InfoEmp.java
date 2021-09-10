@@ -21,6 +21,8 @@ public class InfoEmp extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_emp);
 
+        setTitle("Thông tin cá nhân");
+
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         Spinner spin = (Spinner) findViewById(R.id.spinner_province);
         Spinner spin_district = (Spinner) findViewById(R.id.spinner_district);
