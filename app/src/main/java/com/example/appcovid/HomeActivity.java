@@ -1,6 +1,7 @@
 package com.example.appcovid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
@@ -24,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     {
         bottomNav = findViewById(R.id.main_bottom_nav);
         bottomNav.setOnItemSelectedListener((item) -> {
+            Fragment selectFragment = null;
             switch (item.getItemId()){
                 case R.id.bnav_home_fragment:
                     getSupportFragmentManager().beginTransaction()
@@ -38,6 +40,9 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.bnav_category_fragment:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.main_frag_container, category_fragment.newInstance())
+                            .commit();
                     return true;
 
                 default:
