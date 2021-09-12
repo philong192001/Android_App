@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".feedback_fragment.FeedbackFragment">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@android:style/TextAppearance.Material.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Phản ánh thông tin"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vui lòng nhập thông tin hoặc gọi đường dây nóng "
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_call_hotline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="#913938 "
+                    android:backgroundTint="#913938 "
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/ic_make_call_24" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fdebeb "
+                    android:gravity="center|start"
+                    android:paddingStart="16dp"
+                    android:text="19009095"
+                    android:textColor="#8a3839 "
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="8dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Chọn các trường hợp phản ánh"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Có người tiếp xúc với trường hợp bệnh hoặc nghi ngờ mắc bệnh COVID-19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/checkBox"
+            app:layout_constraintStart_toStartOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Có trường hợp đi từ vùng dịch COVID-19"
+            app:layout_constraintEnd_toEndOf="@id/checkBox"
+            app:layout_constraintStart_toStartOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/checkBox1"
+            app:layout_constraintStart_toStartOf="@+id/checkBox1"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Có người tiếp xúc với các trường hợp đi về từ vùng dịch COVID-19"
+            app:layout_constraintEnd_toEndOf="@id/checkBox1"
+            app:layout_constraintStart_toStartOf="@+id/checkBox1"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/checkBox2"
+            app:layout_constraintStart_toStartOf="@+id/checkBox2"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+        <TextView
+            android:id="@+id/textView16"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nội dung phản ánh khác"
+            app:layout_constraintStart_toStartOf="@+id/checkBox2"
+            app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_corner_bg"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Nhập nội dung"
+            android:inputType="textMultiLine"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/checkBox2"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <View
+            android:id="@+id/view9"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="8dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@android:style/TextAppearance.Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/feedback_time_detected"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine"
+            app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            style="@android:style/TextAppearance.Widget.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableEnd="@drawable/ic_calendar_24"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp"
+            android:text="aaaaa"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
+            app:layout_constraintStart_toStartOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/txt_time"
+            app:layout_constraintStart_toStartOf="@+id/txt_time"
+            app:layout_constraintTop_toBottomOf="@+id/txt_time" />
+
+        <TextView
+            android:id="@+id/textView18"
+            style="@android:style/TextAppearance.Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/feedback_place_detected"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_time"
+            app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+        <com.jaiselrahman.hintspinner.HintSpinner
+            android:id="@+id/spn_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_time"
+            app:layout_constraintStart_toStartOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/spn_province"
+            app:layout_constraintStart_toStartOf="@+id/spn_province"
+            app:layout_constraintTop_toBottomOf="@+id/spn_province" />
+
+        <com.jaiselrahman.hintspinner.HintSpinner
+            android:id="@+id/spinner_district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/view11"
+            app:layout_constraintStart_toStartOf="@+id/view11"
+            app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+        <View
+            android:id="@+id/view12"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/spinner_district"
+            app:layout_constraintStart_toStartOf="@+id/spinner_district"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_district" />
+
+        <com.jaiselrahman.hintspinner.HintSpinner
+            android:id="@+id/spinner_block"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:paddingStart="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/view12"
+            app:layout_constraintStart_toStartOf="@+id/view12"
+            app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+        <View
+            android:id="@+id/view13"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/spinner_block"
+            app:layout_constraintStart_toStartOf="@+id/spinner_block"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_block" />
+
+        <EditText
+            android:id="@+id/edt_house_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Số nhà, đường,..."
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:background="@null"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/view13"
+            app:layout_constraintStart_toStartOf="@+id/view13"
+            app:layout_constraintTop_toBottomOf="@+id/view13" />
+
+        <View
+            android:id="@+id/view14"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#e3e8ee "
+            app:layout_constraintEnd_toEndOf="@+id/edt_house_num"
+            app:layout_constraintStart_toStartOf="@+id/edt_house_num"
+            app:layout_constraintTop_toBottomOf="@+id/edt_house_num" />
+
+        <CheckBox
+            android:id="@+id/chk_accept_all_true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="top"
+            android:text="Tôi cam kết các thông tin khai báo là đúng sự thật và đồng ý chia sẻ vị trí để cơ quan chức năng có thể hỗ trợ tốt nhất"
+            android:textColor="#8a3839 "
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/edt_house_num"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edt_house_num"
+            app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="#7d899a "
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Gửi thông tin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/chk_accept_all_true"
+            app:layout_constraintStart_toStartOf="@+id/chk_accept_all_true"
+            app:layout_constraintTop_toBottomOf="@+id/chk_accept_all_true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

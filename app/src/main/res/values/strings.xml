@@ -6,4 +6,7 @@
     <string name="main_detail_link">Xem chi tiết
         <a href="https://covid19.gov.vn/"></a>
     </string>
+
+    <string name="feedback_time_detected">Thời gian phát hiện <font color='#FF0000'>*</font></string>
+    <string name="feedback_place_detected">Địa điểm phát hiện <font color='#FF0000'>*</font></string>
 </resources>

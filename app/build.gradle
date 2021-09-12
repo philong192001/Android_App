@@ -38,4 +38,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //LongPV impl
     implementation 'com.github.florent37:materialtextfield:1.0.7'
+    implementation 'com.github.jaiselrahman:HintSpinner:1.0.0'
 }
