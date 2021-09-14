@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class InfoEmp extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class DeclarePersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] province = { "Chọn Tỉnh/Thành","Quảng Ninh", "Bắc Giang", "Hà Nội", "Thanh Hóa", "Hải Dương", "Hưng Yên"};
     String[] district = {"Chọn Quận/Huyện","1","2","3"};
@@ -19,7 +18,7 @@ public class InfoEmp extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_emp);
+        setContentView(R.layout.activity_declare_personal_info);
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         Spinner spin = (Spinner) findViewById(R.id.spinner_province);
@@ -41,28 +40,23 @@ public class InfoEmp extends AppCompatActivity implements AdapterView.OnItemSele
         spin_district.setAdapter(list_district);
         spin_wards.setAdapter(list_wards);
     }
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radio_pirates:
-                if (checked)
-                    // Pirates are the best
-                    break;
-            case R.id.radio_ninjas:
-                if (checked)
-                    // Ninjas rule
-                    break;
-        }
-    }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(),province[position] , Toast.LENGTH_LONG).show();
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//        boolean checked = ((RadioButton) view).isChecked();
+//
+//        // Check which radio button was clicked
+//        switch(view.getId()) {
+//            case R.id.radio_pirates:
+//                if (checked)
+//                    // Pirates are the best
+//                    break;
+//            case R.id.radio_ninjas:
+//                if (checked)
+//                    // Ninjas rule
+//                    break;
+//        }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
