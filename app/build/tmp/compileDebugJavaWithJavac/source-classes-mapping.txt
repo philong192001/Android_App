@@ -1,0 +1,44 @@
+com/example/appcovid/BuildConfig.java
+ com.example.appcovid.BuildConfig
+com/example/appcovid/PatientActivity.java
+ com.example.appcovid.PatientActivity
+com/example/appcovid/feedback_fragment/FeedbackBaseFragment.java
+ com.example.appcovid.feedback_fragment.FeedbackBaseFragment
+ com.example.appcovid.feedback_fragment.FeedbackBaseFragment$1
+com/example/appcovid/DeclarePersonalInfoActivity.java
+ com.example.appcovid.DeclarePersonalInfoActivity
+com/example/appcovid/feedback_fragment/ContactReportFragment.java
+ com.example.appcovid.feedback_fragment.ContactReportFragment
+com/example/appcovid/databinding/FragmentContactReportBinding.java
+ com.example.appcovid.databinding.FragmentContactReportBinding
+com/example/appcovid/databinding/ActivityMainBinding.java
+ com.example.appcovid.databinding.ActivityMainBinding
+com/example/appcovid/databinding/ActivityCategoryBinding.java
+ com.example.appcovid.databinding.ActivityCategoryBinding
+com/example/appcovid/InfoPersonActivity.java
+ com.example.appcovid.InfoPersonActivity
+com/example/appcovid/databinding/ActivityDeclarePersonalInfoBinding.java
+ com.example.appcovid.databinding.ActivityDeclarePersonalInfoBinding
+com/example/appcovid/databinding/FragmentFeedbackBinding.java
+ com.example.appcovid.databinding.FragmentFeedbackBinding
+com/example/appcovid/databinding/FragmentFeedbackBaseBinding.java
+ com.example.appcovid.databinding.FragmentFeedbackBaseBinding
+com/example/appcovid/databinding/ActivityInfoEmpBinding.java
+ com.example.appcovid.databinding.ActivityInfoEmpBinding
+com/example/appcovid/HomeActivity.java
+ com.example.appcovid.HomeActivity
+com/example/appcovid/feedback_fragment/FeedbackFragment.java
+ com.example.appcovid.feedback_fragment.FeedbackFragment
+com/example/appcovid/databinding/FragmentHomeBinding.java
+ com.example.appcovid.databinding.FragmentHomeBinding
+com/example/appcovid/CategoryActivity.java
+ com.example.appcovid.CategoryActivity
+com/example/appcovid/home_fragment/HomeFragment.java
+ com.example.appcovid.home_fragment.HomeFragment
+com/example/appcovid/databinding/ActivityPatientBinding.java
+ com.example.appcovid.databinding.ActivityPatientBinding
+com/example/appcovid/databinding/ActivityHomeBinding.java
+ com.example.appcovid.databinding.ActivityHomeBinding
+com/example/appcovid/MainActivity.java
+ com.example.appcovid.MainActivity
+ com.example.appcovid.MainActivity$1
