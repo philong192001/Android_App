@@ -19,7 +19,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCovid" >
         <activity
-            android:name="com.example.appcovid.PatientActivity"
+            android:name="com.example.appcovid.HealthMonitoringActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

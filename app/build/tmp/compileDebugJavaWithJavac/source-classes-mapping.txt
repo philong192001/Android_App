@@ -7,6 +7,8 @@ com/example/appcovid/feedback_fragment/FeedbackBaseFragment.java
  com.example.appcovid.feedback_fragment.FeedbackBaseFragment$1
 com/example/appcovid/DeclarePersonalInfoActivity.java
  com.example.appcovid.DeclarePersonalInfoActivity
+com/example/appcovid/databinding/ActivityScreenOtpBinding.java
+ com.example.appcovid.databinding.ActivityScreenOtpBinding
 com/example/appcovid/feedback_fragment/ContactReportFragment.java
  com.example.appcovid.feedback_fragment.ContactReportFragment
 com/example/appcovid/databinding/FragmentContactReportBinding.java
@@ -29,16 +31,22 @@ com/example/appcovid/HomeActivity.java
  com.example.appcovid.HomeActivity
 com/example/appcovid/feedback_fragment/FeedbackFragment.java
  com.example.appcovid.feedback_fragment.FeedbackFragment
+com/example/appcovid/HealthMonitoringActivity.java
+ com.example.appcovid.HealthMonitoringActivity
 com/example/appcovid/databinding/FragmentHomeBinding.java
  com.example.appcovid.databinding.FragmentHomeBinding
+com/example/appcovid/databinding/ActivityHealthMonitoringBinding.java
+ com.example.appcovid.databinding.ActivityHealthMonitoringBinding
 com/example/appcovid/CategoryActivity.java
  com.example.appcovid.CategoryActivity
+com/example/appcovid/MainActivity.java
+ com.example.appcovid.MainActivity
+ com.example.appcovid.MainActivity$1
 com/example/appcovid/home_fragment/HomeFragment.java
  com.example.appcovid.home_fragment.HomeFragment
 com/example/appcovid/databinding/ActivityPatientBinding.java
  com.example.appcovid.databinding.ActivityPatientBinding
 com/example/appcovid/databinding/ActivityHomeBinding.java
  com.example.appcovid.databinding.ActivityHomeBinding
-com/example/appcovid/MainActivity.java
- com.example.appcovid.MainActivity
- com.example.appcovid.MainActivity$1
+com/example/appcovid/ScreenOTPActivity.java
+ com.example.appcovid.ScreenOTPActivity

@@ -1,42 +1,50 @@
 [
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_feedback.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\fragment_feedback.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_feedback.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\fragment_feedback.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_category.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_category.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_report.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\fragment_contact_report.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_report.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\fragment_contact_report.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_patient.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_patient.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_declare_personal_info.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_declare_personal_info.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_declare_personal_info.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_declare_personal_info.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_home.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_category.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_category.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_feedback_base.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\fragment_feedback_base.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_info_emp.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_info_emp.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_screen_otp.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_screen_otp.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_info_emp.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_info_emp.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\ProjectSem4\\AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_patient.xml",
-        "source": "D:\\ProjectSem4\\AppCovid\\app\\src\\main\\res\\layout\\activity_patient.xml"
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_health_monitoring.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_health_monitoring.xml"
+    },
+    {
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "E:\\PROJECT\\Android_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_feedback_base.xml",
+        "source": "E:\\PROJECT\\Android_App\\app\\src\\main\\res\\layout\\fragment_feedback_base.xml"
     }
 ]
