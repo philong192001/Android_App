@@ -31,18 +31,19 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="20sp"/>
+
             <EditText
                 android:id="@+id/mal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Họ Và Tên "
                 android:inputType="text"
-                android:textColor="#000"
                 android:padding="3dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -56,19 +57,20 @@
                 android:textSize="15dp"
                 android:layout_marginTop="15sp"
                 android:layout_marginLeft="25sp"/>
+
             <EditText
                 android:id="@+id/pswd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="CMTND/CCCD/Hộ chiếu"
-                android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="25sp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5sp"
+                android:background="@null"
+                android:hint="CMTND/CCCD/Hộ chiếu"
+                android:inputType="text"
                 android:padding="3dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -82,19 +84,20 @@
                 android:textSize="15dp"
                 android:layout_marginTop="15sp"
                 android:layout_marginLeft="25sp"/>
+
             <EditText
                 android:id="@+id/bhxh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập mã số BHXH"
-                android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="25sp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5sp"
+                android:background="@null"
+                android:hint="Nhập mã số BHXH"
+                android:inputType="text"
                 android:padding="3dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -108,18 +111,20 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
                 android:id="@+id/usrusr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5sp"
+                android:background="@null"
                 android:hint="Ngày/tháng/năm(VD:08/03/2020)"
                 android:inputType="datetime"
-                android:textColor="#000"
                 android:padding="3dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="5sp"/>
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -213,16 +218,19 @@
                 android:background="#444"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="20dp"></TableRow>
+
             <EditText
+                android:id="@+id/et_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Số nhà, đường,...."
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -236,16 +244,19 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
+                android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Số điện thoại"
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -259,22 +270,26 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Nhập Email"
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
+
             <TableRow
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#444"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"></TableRow>
+                android:layout_marginRight="20dp"
+                android:background="#444"></TableRow>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

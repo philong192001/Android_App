@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -15,10 +16,25 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     String[] province = { "Chọn Tỉnh/Thành","Quảng Ninh", "Bắc Giang", "Hà Nội", "Thanh Hóa", "Hải Dương", "Hưng Yên"};
     String[] district = {"Chọn Quận/Huyện","1","2","3"};
     String[] wards = {"Chọn Xã/Phường","Vàng Danh ", "Bắc Sơn","Thanh Sơn"};
+
+    String phone = "";
+
+    private EditText etFullname;
+    private EditText etCccd;
+    private EditText etBhxh;
+    private EditText etDob;
+    private EditText etAddress;
+    private EditText etPhone;
+    private EditText etEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_declare_personal_info);
+
+        phone = getIntent().getStringExtra("phone");
+        etPhone = findViewById(R.id.et_phone);
+        etPhone.setText(phone);
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
         Spinner spin = (Spinner) findViewById(R.id.spinner_province);
