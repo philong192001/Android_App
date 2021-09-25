@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 public class NetworkModule {
     private NetworkModule() {}
 
-    private static String BASE_URL="http://192.168.1.137:8080";
+    private static String BASE_URL="http://10.0.2.2:5000";
 
     public static Moshi moshi = new Moshi.Builder().build();
 
@@ -18,4 +18,5 @@ public class NetworkModule {
             .build();
 
     public static OtpService otpService = retrofit.create(OtpService.class);
+    public static AccountService accountService = retrofit.create(AccountService.class);
 }

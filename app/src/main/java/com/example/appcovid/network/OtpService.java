@@ -9,4 +9,7 @@ import retrofit2.http.POST;
 public interface OtpService {
     @POST("/v1/sms/mobile")
     Call<Boolean> createOtp(@Body Map<String, String> body);
+
+    @POST("/v1/sms/verifyOtp")
+    Call<Boolean> confirmOtp(@Body Map<String, String> body);
 }

@@ -46,11 +46,11 @@ public class InfoPersonActivity extends AppCompatActivity implements AdapterView
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.radio_pirates:
+            case R.id.radio_male:
                 if (checked)
                     // Pirates are the best
                     break;
-            case R.id.radio_ninjas:
+            case R.id.radio_felame:
                 if (checked)
                     // Ninjas rule
                     break;

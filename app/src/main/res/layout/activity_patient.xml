@@ -87,10 +87,10 @@
                         android:layout_height="66sp"
                         android:layout_marginLeft="5sp"
                         android:text=" Có tiếp xúc với trường hợp đi về\n từ vùng dịch không ?"/>
-                    <RadioButton android:id="@+id/radio_pirates"
+                    <RadioButton android:id="@+id/radio_male"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/radio_ninjas"
+                    <RadioButton android:id="@+id/radio_felame"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />

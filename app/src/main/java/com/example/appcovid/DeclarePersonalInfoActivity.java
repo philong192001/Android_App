@@ -11,6 +11,14 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.appcovid.network.AccountService;
+import com.example.appcovid.network.NetworkModule;
+import com.example.appcovid.network.dto.CreateAccDto;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DeclarePersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] province = { "Chọn Tỉnh/Thành","Quảng Ninh", "Bắc Giang", "Hà Nội", "Thanh Hóa", "Hải Dương", "Hưng Yên"};
@@ -20,20 +28,31 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     String phone = "";
 
     private EditText etFullname;
-    private EditText etCccd;
+    private EditText etCmt;
     private EditText etBhxh;
     private EditText etDob;
     private EditText etAddress;
     private EditText etPhone;
     private EditText etEmail;
+    private RadioButton rbtMale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_declare_personal_info);
 
-        phone = getIntent().getStringExtra("phone");
+
+        etFullname = findViewById(R.id.et_name);
+        etCmt = findViewById(R.id.et_cmt);
+        etBhxh = findViewById(R.id.et_bhxh);
+        etDob = findViewById(R.id.et_dob);
+        etAddress = findViewById(R.id.et_address);
         etPhone = findViewById(R.id.et_phone);
+        etEmail = findViewById(R.id.et_email);
+        rbtMale = findViewById(R.id.radio_male);
+
+        phone = getIntent().getStringExtra("phone");
+
         etPhone.setText(phone);
 
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
@@ -76,5 +95,31 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    private void submitInfo(){
+        CreateAccDto dto = new CreateAccDto();
+        dto.name = etFullname.getText().toString();
+        dto.birthDay = etDob.getText().toString();
+        dto.cmt = etCmt.getText().toString();
+        dto.gender = rbtMale.isChecked();
+        dto.phone = etPhone.getText().toString();
+        dto.idCommune = 0;
+        dto.address = etAddress.getText().toString();
+
+
+        Call<String> call = NetworkModule.accountService.createAccount(dto);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                t.printStackTrace();
+                Toast.makeText(DeclarePersonalInfoActivity.this, "Lỗi khi tạo account", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

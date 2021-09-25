@@ -33,7 +33,7 @@
                 android:layout_marginTop="20sp"/>
 
             <EditText
-                android:id="@+id/mal"
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -59,7 +59,7 @@
                 android:layout_marginLeft="25sp"/>
 
             <EditText
-                android:id="@+id/pswd"
+                android:id="@+id/et_cmt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
@@ -86,7 +86,7 @@
                 android:layout_marginLeft="25sp"/>
 
             <EditText
-                android:id="@+id/bhxh"
+                android:id="@+id/et_bhxh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
@@ -113,7 +113,7 @@
                 android:layout_marginTop="15sp"/>
 
             <EditText
-                android:id="@+id/usrusr"
+                android:id="@+id/et_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -145,13 +145,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginLeft="35sp">
-                <RadioButton android:id="@+id/radio_pirates"
+                <RadioButton android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nam"
                     android:onClick="onRadioButtonClicked"
                     android:layout_marginRight="10sp"/>
-                <RadioButton android:id="@+id/radio_ninjas"
+                <RadioButton android:id="@+id/radio_felame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nữ"
@@ -272,6 +272,7 @@
                 android:layout_marginTop="15sp"/>
 
             <EditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -284,7 +285,6 @@
                 android:textColor="#000" />
 
             <TableRow
-                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="25dp"
