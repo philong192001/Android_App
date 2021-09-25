@@ -1970,7 +1970,6 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
-id bhxh
 id blocking
 id bnav_category_fragment
 id bnav_feedback_fragment
@@ -1985,6 +1984,8 @@ id btGui
 id bt_VerificationPhone
 id btnHoTro
 id btn_call_hotline
+id btn_confirm_otp
+id btn_register
 id button
 id button2
 id button3
@@ -1993,7 +1994,6 @@ id button5
 id button6
 id button7
 id button8
-id button9
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2083,11 +2083,6 @@ id easeInOut
 id easeOut
 id east
 id ed_phone
-id editTextPhone
-id editTextPhone2
-id editTextPhone3
-id editTextPhone4
-id editTextPhone5
 id editTextTextMultiLine
 id edit_query
 id edt_house_num
@@ -2098,6 +2093,14 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id etCaNhan
+id et_address
+id et_bhxh
+id et_cmt
+id et_dob
+id et_email
+id et_name
+id et_otp
+id et_phone
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2164,6 +2167,8 @@ id line3
 id linear
 id listMode
 id list_item
+id loading_overlay
+id loading_prgr
 id main_bottom_nav
 id main_frag_container
 id mal
@@ -2267,10 +2272,11 @@ id progress_circular
 id progress_horizontal
 id pswd
 id radio
-id radio_ninjas
-id radio_pirates
+id radio_felame
+id radio_male
 id ratio
 id rectangles
+id relativeLayout
 id reverseSawtooth
 id right
 id rightToLeft

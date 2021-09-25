@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CreateAccDto {
     public String name;
-    public String birthDay;
+    public Date birthDay;
     public String cmt;
     public boolean gender;
     public String phone;

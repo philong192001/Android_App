@@ -4,6 +4,7 @@ package com.example.appcovid.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
@@ -23,19 +24,34 @@ public final class ActivityDeclarePersonalInfoBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final EditText bhxh;
+  public final Button btnRegister;
 
   @NonNull
-  public final EditText mal;
+  public final EditText etAddress;
 
   @NonNull
-  public final EditText pswd;
+  public final EditText etBhxh;
 
   @NonNull
-  public final RadioButton radioNinjas;
+  public final EditText etCmt;
 
   @NonNull
-  public final RadioButton radioPirates;
+  public final EditText etDob;
+
+  @NonNull
+  public final EditText etEmail;
+
+  @NonNull
+  public final EditText etName;
+
+  @NonNull
+  public final EditText etPhone;
+
+  @NonNull
+  public final RadioButton radioFelame;
+
+  @NonNull
+  public final RadioButton radioMale;
 
   @NonNull
   public final ScrollView scrollVieww;
@@ -49,25 +65,28 @@ public final class ActivityDeclarePersonalInfoBinding implements ViewBinding {
   @NonNull
   public final Spinner spinnerWards;
 
-  @NonNull
-  public final EditText usrusr;
-
   private ActivityDeclarePersonalInfoBinding(@NonNull ConstraintLayout rootView,
-      @NonNull EditText bhxh, @NonNull EditText mal, @NonNull EditText pswd,
-      @NonNull RadioButton radioNinjas, @NonNull RadioButton radioPirates,
-      @NonNull ScrollView scrollVieww, @NonNull Spinner spinnerDistrict,
-      @NonNull Spinner spinnerProvince, @NonNull Spinner spinnerWards, @NonNull EditText usrusr) {
+      @NonNull Button btnRegister, @NonNull EditText etAddress, @NonNull EditText etBhxh,
+      @NonNull EditText etCmt, @NonNull EditText etDob, @NonNull EditText etEmail,
+      @NonNull EditText etName, @NonNull EditText etPhone, @NonNull RadioButton radioFelame,
+      @NonNull RadioButton radioMale, @NonNull ScrollView scrollVieww,
+      @NonNull Spinner spinnerDistrict, @NonNull Spinner spinnerProvince,
+      @NonNull Spinner spinnerWards) {
     this.rootView = rootView;
-    this.bhxh = bhxh;
-    this.mal = mal;
-    this.pswd = pswd;
-    this.radioNinjas = radioNinjas;
-    this.radioPirates = radioPirates;
+    this.btnRegister = btnRegister;
+    this.etAddress = etAddress;
+    this.etBhxh = etBhxh;
+    this.etCmt = etCmt;
+    this.etDob = etDob;
+    this.etEmail = etEmail;
+    this.etName = etName;
+    this.etPhone = etPhone;
+    this.radioFelame = radioFelame;
+    this.radioMale = radioMale;
     this.scrollVieww = scrollVieww;
     this.spinnerDistrict = spinnerDistrict;
     this.spinnerProvince = spinnerProvince;
     this.spinnerWards = spinnerWards;
-    this.usrusr = usrusr;
   }
 
   @Override
@@ -97,33 +116,63 @@ public final class ActivityDeclarePersonalInfoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bhxh;
-      EditText bhxh = ViewBindings.findChildViewById(rootView, id);
-      if (bhxh == null) {
+      id = R.id.btn_register;
+      Button btnRegister = ViewBindings.findChildViewById(rootView, id);
+      if (btnRegister == null) {
         break missingId;
       }
 
-      id = R.id.mal;
-      EditText mal = ViewBindings.findChildViewById(rootView, id);
-      if (mal == null) {
+      id = R.id.et_address;
+      EditText etAddress = ViewBindings.findChildViewById(rootView, id);
+      if (etAddress == null) {
         break missingId;
       }
 
-      id = R.id.pswd;
-      EditText pswd = ViewBindings.findChildViewById(rootView, id);
-      if (pswd == null) {
+      id = R.id.et_bhxh;
+      EditText etBhxh = ViewBindings.findChildViewById(rootView, id);
+      if (etBhxh == null) {
         break missingId;
       }
 
-      id = R.id.radio_ninjas;
-      RadioButton radioNinjas = ViewBindings.findChildViewById(rootView, id);
-      if (radioNinjas == null) {
+      id = R.id.et_cmt;
+      EditText etCmt = ViewBindings.findChildViewById(rootView, id);
+      if (etCmt == null) {
         break missingId;
       }
 
-      id = R.id.radio_pirates;
-      RadioButton radioPirates = ViewBindings.findChildViewById(rootView, id);
-      if (radioPirates == null) {
+      id = R.id.et_dob;
+      EditText etDob = ViewBindings.findChildViewById(rootView, id);
+      if (etDob == null) {
+        break missingId;
+      }
+
+      id = R.id.et_email;
+      EditText etEmail = ViewBindings.findChildViewById(rootView, id);
+      if (etEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.et_name;
+      EditText etName = ViewBindings.findChildViewById(rootView, id);
+      if (etName == null) {
+        break missingId;
+      }
+
+      id = R.id.et_phone;
+      EditText etPhone = ViewBindings.findChildViewById(rootView, id);
+      if (etPhone == null) {
+        break missingId;
+      }
+
+      id = R.id.radio_felame;
+      RadioButton radioFelame = ViewBindings.findChildViewById(rootView, id);
+      if (radioFelame == null) {
+        break missingId;
+      }
+
+      id = R.id.radio_male;
+      RadioButton radioMale = ViewBindings.findChildViewById(rootView, id);
+      if (radioMale == null) {
         break missingId;
       }
 
@@ -151,15 +200,9 @@ public final class ActivityDeclarePersonalInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.usrusr;
-      EditText usrusr = ViewBindings.findChildViewById(rootView, id);
-      if (usrusr == null) {
-        break missingId;
-      }
-
-      return new ActivityDeclarePersonalInfoBinding((ConstraintLayout) rootView, bhxh, mal, pswd,
-          radioNinjas, radioPirates, scrollVieww, spinnerDistrict, spinnerProvince, spinnerWards,
-          usrusr);
+      return new ActivityDeclarePersonalInfoBinding((ConstraintLayout) rootView, btnRegister,
+          etAddress, etBhxh, etCmt, etDob, etEmail, etName, etPhone, radioFelame, radioMale,
+          scrollVieww, spinnerDistrict, spinnerProvince, spinnerWards);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

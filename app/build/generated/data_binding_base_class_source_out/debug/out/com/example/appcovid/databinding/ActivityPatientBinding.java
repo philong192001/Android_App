@@ -30,10 +30,10 @@ public final class ActivityPatientBinding implements ViewBinding {
   public final RadioButton avadv;
 
   @NonNull
-  public final RadioButton radioNinjas;
+  public final RadioButton radioFelame;
 
   @NonNull
-  public final RadioButton radioPirates;
+  public final RadioButton radioMale;
 
   @NonNull
   public final ScrollView scrollView;
@@ -42,15 +42,14 @@ public final class ActivityPatientBinding implements ViewBinding {
   public final RadioButton sdfgsg;
 
   private ActivityPatientBinding(@NonNull ConstraintLayout rootView, @NonNull RadioButton a,
-      @NonNull RadioButton abc, @NonNull RadioButton avadv, @NonNull RadioButton radioNinjas,
-      @NonNull RadioButton radioPirates, @NonNull ScrollView scrollView,
-      @NonNull RadioButton sdfgsg) {
+      @NonNull RadioButton abc, @NonNull RadioButton avadv, @NonNull RadioButton radioFelame,
+      @NonNull RadioButton radioMale, @NonNull ScrollView scrollView, @NonNull RadioButton sdfgsg) {
     this.rootView = rootView;
     this.a = a;
     this.abc = abc;
     this.avadv = avadv;
-    this.radioNinjas = radioNinjas;
-    this.radioPirates = radioPirates;
+    this.radioFelame = radioFelame;
+    this.radioMale = radioMale;
     this.scrollView = scrollView;
     this.sdfgsg = sdfgsg;
   }
@@ -100,15 +99,15 @@ public final class ActivityPatientBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.radio_ninjas;
-      RadioButton radioNinjas = ViewBindings.findChildViewById(rootView, id);
-      if (radioNinjas == null) {
+      id = R.id.radio_felame;
+      RadioButton radioFelame = ViewBindings.findChildViewById(rootView, id);
+      if (radioFelame == null) {
         break missingId;
       }
 
-      id = R.id.radio_pirates;
-      RadioButton radioPirates = ViewBindings.findChildViewById(rootView, id);
-      if (radioPirates == null) {
+      id = R.id.radio_male;
+      RadioButton radioMale = ViewBindings.findChildViewById(rootView, id);
+      if (radioMale == null) {
         break missingId;
       }
 
@@ -124,8 +123,8 @@ public final class ActivityPatientBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPatientBinding((ConstraintLayout) rootView, a, abc, avadv, radioNinjas,
-          radioPirates, scrollView, sdfgsg);
+      return new ActivityPatientBinding((ConstraintLayout) rootView, a, abc, avadv, radioFelame,
+          radioMale, scrollView, sdfgsg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

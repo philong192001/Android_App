@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -13,18 +14,21 @@ import android.widget.Toast;
 
 import com.example.appcovid.network.AccountService;
 import com.example.appcovid.network.NetworkModule;
+import com.example.appcovid.network.dto.CommuneDto;
 import com.example.appcovid.network.dto.CreateAccDto;
+import com.example.appcovid.network.dto.DistrictDto;
+import com.example.appcovid.network.dto.MessDto;
+import com.example.appcovid.network.dto.ProvinceDto;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DeclarePersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
-    String[] province = { "Chọn Tỉnh/Thành","Quảng Ninh", "Bắc Giang", "Hà Nội", "Thanh Hóa", "Hải Dương", "Hưng Yên"};
-    String[] district = {"Chọn Quận/Huyện","1","2","3"};
-    String[] wards = {"Chọn Xã/Phường","Vàng Danh ", "Bắc Sơn","Thanh Sơn"};
-
     String phone = "";
 
     private EditText etFullname;
@@ -35,6 +39,14 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private EditText etPhone;
     private EditText etEmail;
     private RadioButton rbtMale;
+
+    private Button btnReg;
+
+    private AccountService accountService = NetworkModule.accountService;
+
+    Spinner spin_province;
+    Spinner spin_district;
+    Spinner spin_wards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,73 +62,174 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         etPhone = findViewById(R.id.et_phone);
         etEmail = findViewById(R.id.et_email);
         rbtMale = findViewById(R.id.radio_male);
+        btnReg = findViewById(R.id.btn_register);
 
         phone = getIntent().getStringExtra("phone");
 
         etPhone.setText(phone);
 
-        //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        Spinner spin = (Spinner) findViewById(R.id.spinner_province);
-        Spinner spin_district = (Spinner) findViewById(R.id.spinner_district);
-        Spinner spin_wards = (Spinner) findViewById(R.id.spinner_wards);
-        spin.setOnItemSelectedListener(this);
-        spin_district.setOnItemSelectedListener(this);
-        spin_wards.setOnItemSelectedListener(this);
+        spin_province = (Spinner) findViewById(R.id.spinner_province);
+        spin_district = (Spinner) findViewById(R.id.spinner_district);
+        spin_wards = (Spinner) findViewById(R.id.spinner_wards);
 
-        //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,province);
-        ArrayAdapter list_district = new ArrayAdapter(this,android.R.layout.simple_spinner_item,district);
-        ArrayAdapter list_wards = new ArrayAdapter(this,android.R.layout.simple_spinner_item,wards);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        list_district.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        list_wards.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
-        spin_district.setAdapter(list_district);
-        spin_wards.setAdapter(list_wards);
+        loadSpinners();
+
+        btnReg.setOnClickListener(v -> submitInfo());
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        // Check which radio button was clicked
-//        switch(view.getId()) {
-//            case R.id.radio_pirates:
-//                if (checked)
-//                    // Pirates are the best
-//                    break;
-//            case R.id.radio_ninjas:
-//                if (checked)
-//                    // Ninjas rule
-//                    break;
-//        }
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
-    private void submitInfo(){
-        CreateAccDto dto = new CreateAccDto();
-        dto.name = etFullname.getText().toString();
-        dto.birthDay = etDob.getText().toString();
-        dto.cmt = etCmt.getText().toString();
-        dto.gender = rbtMale.isChecked();
-        dto.phone = etPhone.getText().toString();
-        dto.idCommune = 0;
-        dto.address = etAddress.getText().toString();
-
-
-        Call<String> call = NetworkModule.accountService.createAccount(dto);
-        call.enqueue(new Callback<String>() {
+    private void loadSpinners()
+    {
+        Call<List<ProvinceDto>> callp = accountService.getAllProvince();
+        callp.enqueue(new Callback<List<ProvinceDto>>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<List<ProvinceDto>> call, Response<List<ProvinceDto>> response) {
+                if(response.isSuccessful())
+                {
+                    List<ProvinceDto> body = response.body();
+                    ArrayAdapter aa = new ArrayAdapter<ProvinceDto>
+                            (DeclarePersonalInfoActivity.this, android.R.layout.simple_spinner_dropdown_item, body);
 
+                    spin_province.setAdapter(aa);
+
+                    spin_province.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            long id = ((ProvinceDto) aa.getItem(i)).provinceId;
+                            loadDistrict(id);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
+                else
+                {
+
+                }
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<List<ProvinceDto>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    private void loadDistrict(long id)
+    {
+        Call<List<DistrictDto>> calld = accountService.getDistrictById(id);
+        calld.enqueue(new Callback<List<DistrictDto>>() {
+            @Override
+            public void onResponse(Call<List<DistrictDto>> call, Response<List<DistrictDto>> response) {
+                if(response.isSuccessful())
+                {
+                    List<DistrictDto> body = response.body();
+                    ArrayAdapter aa = new ArrayAdapter<DistrictDto>
+                            (DeclarePersonalInfoActivity.this, android.R.layout.simple_spinner_dropdown_item, body);
+
+                    spin_district.setAdapter(aa);
+
+                    spin_district.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            long id = ((DistrictDto) aa.getItem(i)).districtId;
+                            loadWard(id);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
+                else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<DistrictDto>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    private void loadWard(long id)
+    {
+        Call<List<CommuneDto>> callc = accountService.getCommnueById(id);
+        callc.enqueue(new Callback<List<CommuneDto>>() {
+            @Override
+            public void onResponse(Call<List<CommuneDto>> call, Response<List<CommuneDto>> response) {
+                if(response.isSuccessful())
+                {
+                    List<CommuneDto> body = response.body();
+                    ArrayAdapter aa = new ArrayAdapter<CommuneDto>
+                            (DeclarePersonalInfoActivity.this, android.R.layout.simple_spinner_dropdown_item, body);
+
+                    spin_wards.setAdapter(aa);
+                }
+                else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<CommuneDto>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    private void submitInfo(){
+        btnReg.setEnabled(true);
+
+        CreateAccDto dto = new CreateAccDto();
+        dto.name = etFullname.getText().toString();
+        dto.birthDay = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            dto.birthDay = df.parse(etDob.getText().toString());
+        }
+        catch (Exception e)
+        {
+
+        }
+        dto.cmt = etCmt.getText().toString();
+        dto.gender = rbtMale.isChecked();
+        dto.phone = etPhone.getText().toString();
+        dto.idCommune = ((CommuneDto) spin_wards.getSelectedItem()).communeId;
+        dto.address = etAddress.getText().toString();
+
+
+        Call<MessDto> call = accountService.createAccount(dto);
+        call.enqueue(new Callback<MessDto>() {
+            @Override
+            public void onResponse(Call<MessDto> call, Response<MessDto> response) {
+                btnReg.setEnabled(true);
+                if(response.isSuccessful())
+                {
+                    MessDto r = response.body();
+
+                }
+                else
+                {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MessDto> call, Throwable t) {
+                btnReg.setEnabled(true);
                 t.printStackTrace();
                 Toast.makeText(DeclarePersonalInfoActivity.this, "Lỗi khi tạo account", Toast.LENGTH_LONG).show();
             }

@@ -54,7 +54,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
          * Call api create otp
          * **/
 
-        /*setLoadingState(true);
+        setLoadingState(true);
 
         Map<String, String> body = new HashMap<>();
         body.put("phone", phone);
@@ -63,7 +63,26 @@ public class ScreenOTPActivity extends AppCompatActivity {
         call.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                setLoadingState(false);
+                if(response.isSuccessful())
+                {
+                    boolean success = response.body();
+                    if(success)
+                    {
+                        setLoadingState(false);
+                    }
+                    else
+                    {
+                        Toast.makeText(ScreenOTPActivity.this, "Lỗi khi tạo otp", Toast.LENGTH_LONG).show();
+                        loadingOverlay.setVisibility(View.INVISIBLE);
+                        loadingBar.setVisibility(View.INVISIBLE);
+                    }
+                }
+                else
+                {
+                    Toast.makeText(ScreenOTPActivity.this, "Lỗi khi tạo otp", Toast.LENGTH_LONG).show();
+                    loadingOverlay.setVisibility(View.INVISIBLE);
+                    loadingBar.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -73,7 +92,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
                 loadingOverlay.setVisibility(View.INVISIBLE);
                 loadingBar.setVisibility(View.INVISIBLE);
             }
-        });*/
+        });
     }
 
     private void confirmOtp()
@@ -88,7 +107,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
 
         //call api to confirm otp
 
-        /*Map<String, String> body = new HashMap<>();
+        Map<String, String> body = new HashMap<>();
         body.put("otp", otpText.getText().toString());
         Call<Boolean> call = otpService.confirmOtp(body);
 
@@ -124,13 +143,13 @@ public class ScreenOTPActivity extends AppCompatActivity {
             }
         });
 
-        setLoadingState(true);*/
+        setLoadingState(true);
 
         //delete this before calling real api
-        Intent intent = new Intent(this, DeclarePersonalInfoActivity.class);
+        /*Intent intent = new Intent(this, DeclarePersonalInfoActivity.class);
         intent.putExtra("phone", phone);
         startActivity(intent);
-        finish();
+        finish();*/
     }
 
     private void setLoadingState(boolean isLoading)

@@ -1,12 +1,26 @@
+com/example/appcovid/home_fragment/HomeFragment.java
+ com.example.appcovid.home_fragment.HomeFragment
+com/example/appcovid/network/dto/DistrictDto.java
+ com.example.appcovid.network.dto.DistrictDto
 com/example/appcovid/BuildConfig.java
  com.example.appcovid.BuildConfig
+com/example/appcovid/databinding/ActivityHomeBinding.java
+ com.example.appcovid.databinding.ActivityHomeBinding
+com/example/appcovid/databinding/ActivityPatientBinding.java
+ com.example.appcovid.databinding.ActivityPatientBinding
+com/example/appcovid/network/dto/ProvinceDto.java
+ com.example.appcovid.network.dto.ProvinceDto
+com/example/appcovid/network/dto/CommuneDto.java
+ com.example.appcovid.network.dto.CommuneDto
+com/example/appcovid/network/OtpService.java
+ com.example.appcovid.network.OtpService
 com/example/appcovid/PatientActivity.java
  com.example.appcovid.PatientActivity
 com/example/appcovid/feedback_fragment/FeedbackBaseFragment.java
  com.example.appcovid.feedback_fragment.FeedbackBaseFragment
  com.example.appcovid.feedback_fragment.FeedbackBaseFragment$1
-com/example/appcovid/DeclarePersonalInfoActivity.java
- com.example.appcovid.DeclarePersonalInfoActivity
+com/example/appcovid/MainActivity.java
+ com.example.appcovid.MainActivity
 com/example/appcovid/databinding/ActivityScreenOtpBinding.java
  com.example.appcovid.databinding.ActivityScreenOtpBinding
 com/example/appcovid/feedback_fragment/ContactReportFragment.java
@@ -33,20 +47,32 @@ com/example/appcovid/feedback_fragment/FeedbackFragment.java
  com.example.appcovid.feedback_fragment.FeedbackFragment
 com/example/appcovid/HealthMonitoringActivity.java
  com.example.appcovid.HealthMonitoringActivity
+com/example/appcovid/custom_view/OtpEditText.java
+ com.example.appcovid.custom_view.OtpEditText
+ com.example.appcovid.custom_view.OtpEditText$1
 com/example/appcovid/databinding/FragmentHomeBinding.java
  com.example.appcovid.databinding.FragmentHomeBinding
 com/example/appcovid/databinding/ActivityHealthMonitoringBinding.java
  com.example.appcovid.databinding.ActivityHealthMonitoringBinding
 com/example/appcovid/CategoryActivity.java
  com.example.appcovid.CategoryActivity
-com/example/appcovid/MainActivity.java
- com.example.appcovid.MainActivity
- com.example.appcovid.MainActivity$1
-com/example/appcovid/home_fragment/HomeFragment.java
- com.example.appcovid.home_fragment.HomeFragment
-com/example/appcovid/databinding/ActivityPatientBinding.java
- com.example.appcovid.databinding.ActivityPatientBinding
-com/example/appcovid/databinding/ActivityHomeBinding.java
- com.example.appcovid.databinding.ActivityHomeBinding
+com/example/appcovid/network/dto/CreateAccDto.java
+ com.example.appcovid.network.dto.CreateAccDto
+com/example/appcovid/network/AccountService.java
+ com.example.appcovid.network.AccountService
+com/example/appcovid/network/dto/MessDto.java
+ com.example.appcovid.network.dto.MessDto
+com/example/appcovid/DeclarePersonalInfoActivity.java
+ com.example.appcovid.DeclarePersonalInfoActivity
+ com.example.appcovid.DeclarePersonalInfoActivity$1
+ com.example.appcovid.DeclarePersonalInfoActivity$1$1
+ com.example.appcovid.DeclarePersonalInfoActivity$2
+ com.example.appcovid.DeclarePersonalInfoActivity$2$1
+ com.example.appcovid.DeclarePersonalInfoActivity$3
+ com.example.appcovid.DeclarePersonalInfoActivity$4
 com/example/appcovid/ScreenOTPActivity.java
  com.example.appcovid.ScreenOTPActivity
+ com.example.appcovid.ScreenOTPActivity$1
+ com.example.appcovid.ScreenOTPActivity$2
+com/example/appcovid/network/NetworkModule.java
+ com.example.appcovid.network.NetworkModule

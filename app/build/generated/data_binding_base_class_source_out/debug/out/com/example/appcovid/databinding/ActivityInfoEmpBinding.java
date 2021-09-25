@@ -29,10 +29,10 @@ public final class ActivityInfoEmpBinding implements ViewBinding {
   public final EditText pswd;
 
   @NonNull
-  public final RadioButton radioNinjas;
+  public final RadioButton radioFelame;
 
   @NonNull
-  public final RadioButton radioPirates;
+  public final RadioButton radioMale;
 
   @NonNull
   public final ScrollView scrollVieww;
@@ -50,14 +50,14 @@ public final class ActivityInfoEmpBinding implements ViewBinding {
   public final EditText usrusr;
 
   private ActivityInfoEmpBinding(@NonNull ConstraintLayout rootView, @NonNull EditText mal,
-      @NonNull EditText pswd, @NonNull RadioButton radioNinjas, @NonNull RadioButton radioPirates,
+      @NonNull EditText pswd, @NonNull RadioButton radioFelame, @NonNull RadioButton radioMale,
       @NonNull ScrollView scrollVieww, @NonNull Spinner spinnerDistrict,
       @NonNull Spinner spinnerProvince, @NonNull Spinner spinnerWards, @NonNull EditText usrusr) {
     this.rootView = rootView;
     this.mal = mal;
     this.pswd = pswd;
-    this.radioNinjas = radioNinjas;
-    this.radioPirates = radioPirates;
+    this.radioFelame = radioFelame;
+    this.radioMale = radioMale;
     this.scrollVieww = scrollVieww;
     this.spinnerDistrict = spinnerDistrict;
     this.spinnerProvince = spinnerProvince;
@@ -104,15 +104,15 @@ public final class ActivityInfoEmpBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.radio_ninjas;
-      RadioButton radioNinjas = ViewBindings.findChildViewById(rootView, id);
-      if (radioNinjas == null) {
+      id = R.id.radio_felame;
+      RadioButton radioFelame = ViewBindings.findChildViewById(rootView, id);
+      if (radioFelame == null) {
         break missingId;
       }
 
-      id = R.id.radio_pirates;
-      RadioButton radioPirates = ViewBindings.findChildViewById(rootView, id);
-      if (radioPirates == null) {
+      id = R.id.radio_male;
+      RadioButton radioMale = ViewBindings.findChildViewById(rootView, id);
+      if (radioMale == null) {
         break missingId;
       }
 
@@ -146,8 +146,8 @@ public final class ActivityInfoEmpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityInfoEmpBinding((ConstraintLayout) rootView, mal, pswd, radioNinjas,
-          radioPirates, scrollVieww, spinnerDistrict, spinnerProvince, spinnerWards, usrusr);
+      return new ActivityInfoEmpBinding((ConstraintLayout) rootView, mal, pswd, radioFelame,
+          radioMale, scrollVieww, spinnerDistrict, spinnerProvince, spinnerWards, usrusr);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

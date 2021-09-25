@@ -140,23 +140,24 @@
                 android:layout_marginTop="15sp"
                 />
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginLeft="35sp">
-                <RadioButton android:id="@+id/radio_male"
+
+                <RadioButton
+                    android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nam"
-                    android:onClick="onRadioButtonClicked"
-                    android:layout_marginRight="10sp"/>
-                <RadioButton android:id="@+id/radio_felame"
+                    android:layout_marginRight="10sp"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:id="@+id/radio_felame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nữ"
-                    android:onClick="onRadioButtonClicked"
-                    />
+                    android:text="Nữ" />
             </RadioGroup>
             <TableRow
                 android:layout_width="match_parent"
@@ -290,15 +291,17 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="20dp"
                 android:background="#444"></TableRow>
+
             <Button
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tiếp Tục"
                 android:layout_marginLeft="35dp"
-                android:layout_marginRight="35dp"
                 android:layout_marginTop="35dp"
-                android:textColor="@color/white"
-                android:background="@color/black"/>
+                android:layout_marginRight="35dp"
+                android:background="@color/black"
+                android:text="Tiếp Tục"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 
