@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         btVerificationPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(MainActivity.this, InfoPersonActivity.class));
+                startActivity(new Intent(MainActivity.this, InfoPersonActivity.class));
                 finish();
             }
         });

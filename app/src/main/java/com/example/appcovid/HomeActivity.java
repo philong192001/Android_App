@@ -35,6 +35,9 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.bnav_health_fragment:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.main_frag_container, health_fragment.newInstance())
+                            .commit();
                     return true;
 
                 case R.id.bnav_feedback_fragment:
@@ -44,9 +47,9 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.bnav_category_fragment:
-                    /*getSupportFragmentManager().beginTransaction()
+                    getSupportFragmentManager().beginTransaction()
                             .replace(R.id.main_frag_container, category_fragment.newInstance())
-                            .commit();*/
+                            .commit();
                     return true;
 
                 default:
