@@ -17,7 +17,7 @@
         <activity
                     android:name=".InfoPersonActivity"
                     android:exported="true" />
-                 />
+            
         <activity
             android:name=".MainActivity"
             android:exported="true">
