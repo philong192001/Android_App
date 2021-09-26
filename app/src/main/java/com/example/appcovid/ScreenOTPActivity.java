@@ -176,13 +176,14 @@ public class ScreenOTPActivity extends AppCompatActivity {
                     if(res!=null && res.phone.contentEquals(phone))
                     {
                         Intent intent = new Intent(ScreenOTPActivity.this, HomeActivity.class);
+                        intent.putExtra("accinfo", res);
                         startActivity(intent);
                         finish();
                     }
                 }
                 else
                 {
-                    Intent intent = new Intent(ScreenOTPActivity.this, DeclarePersonalInfoActivity.class);
+                    Intent intent = new Intent(ScreenOTPActivity.this, InfoEmp.class);
                     intent.putExtra("phone", phone);
                     startActivity(intent);
                     finish();

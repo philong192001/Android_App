@@ -2,6 +2,7 @@ package com.example.appcovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,7 +38,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private EditText etDob;
     private EditText etAddress;
     private EditText etPhone;
-    private EditText etEmail;
     private RadioButton rbtMale;
 
     private Button btnReg;
@@ -47,6 +47,8 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     Spinner spin_province;
     Spinner spin_district;
     Spinner spin_wards;
+
+    CreateAccDto acc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +62,18 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         etDob = findViewById(R.id.et_dob);
         etAddress = findViewById(R.id.et_address);
         etPhone = findViewById(R.id.et_phone);
-        etEmail = findViewById(R.id.et_email);
         rbtMale = findViewById(R.id.radio_male);
         btnReg = findViewById(R.id.btn_register);
 
-        phone = getIntent().getStringExtra("phone");
+        acc = ((CreateAccDto) getIntent().getSerializableExtra("accinfo"));
 
-        etPhone.setText(phone);
+        etFullname.setText(acc.name);
+        etCmt.setText(acc.cmt);
+        String dob = new SimpleDateFormat("dd/MM/yyyy").format(acc.birthDay);
+        etDob.setText(dob);
+        etAddress.setText(acc.address);
+        etPhone.setText(acc.phone);
+        rbtMale.setChecked(acc.gender);
 
         spin_province = (Spinner) findViewById(R.id.spinner_province);
         spin_district = (Spinner) findViewById(R.id.spinner_district);
@@ -191,48 +198,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     }
 
     private void submitInfo(){
-        btnReg.setEnabled(true);
-
-        CreateAccDto dto = new CreateAccDto();
-        dto.name = etFullname.getText().toString();
-        dto.birthDay = new Date();
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            dto.birthDay = df.parse(etDob.getText().toString());
-        }
-        catch (Exception e)
-        {
-
-        }
-        dto.cmt = etCmt.getText().toString();
-        dto.gender = rbtMale.isChecked();
-        dto.phone = etPhone.getText().toString();
-        dto.idCommune = ((CommuneDto) spin_wards.getSelectedItem()).communeId;
-        dto.address = etAddress.getText().toString();
-
-
-        Call<MessDto> call = accountService.createAccount(dto);
-        call.enqueue(new Callback<MessDto>() {
-            @Override
-            public void onResponse(Call<MessDto> call, Response<MessDto> response) {
-                btnReg.setEnabled(true);
-                if(response.isSuccessful())
-                {
-                    MessDto r = response.body();
-
-                }
-                else
-                {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MessDto> call, Throwable t) {
-                btnReg.setEnabled(true);
-                t.printStackTrace();
-                Toast.makeText(DeclarePersonalInfoActivity.this, "Lỗi khi tạo account", Toast.LENGTH_LONG).show();
-            }
-        });
+        Intent intent = new Intent(this, PatientActivity.class);
+        startActivity(intent);
     }
 }

@@ -24,9 +24,13 @@
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_declare_personal_info.xml" value="0.20416666666666666" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_info_emp.xml" value="0.20416666666666666" />
+        <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_info_person.xml" value="0.1716485507246377" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_patient.xml" value="0.20416666666666666" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/activity_screen_otp.xml" value="0.19010416666666666" />
+        <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/fragment_category.xml" value="0.165625" />
+        <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/fragment_contact_report.xml" value="0.165625" />
+        <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/fragment_health_monitoring.xml" value="0.165625" />
         <entry key="..\:/ProjectSem4/Android_App/app/src/main/res/layout/fragment_home.xml" value="0.19010416666666666" />
         <entry key="..\:/ProjectSem4/AppCovid/app/src/main/res/layout/activity_info_emp.xml" value="0.25" />
         <entry key="..\:/ProjectSem4/AppCovid/app/src/main/res/layout/activity_main.xml" value="0.2" />

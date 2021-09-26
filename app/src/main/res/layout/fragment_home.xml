@@ -306,7 +306,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView12" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btn_declare_info"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="8dp"
@@ -325,12 +325,12 @@
             android:layout_height="70dp"
             android:backgroundTint="@color/ncoviblue"
             android:text="HƯỚNG DẪN PHÒNG CHỐNG DỊCH"
-            app:layout_constraintBottom_toBottomOf="@+id/button5"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_declare_info"
             app:layout_constraintEnd_toEndOf="@+id/view3"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@+id/button5"
-            app:layout_constraintTop_toTopOf="@+id/button5" />
+            app:layout_constraintStart_toEndOf="@+id/btn_declare_info"
+            app:layout_constraintTop_toTopOf="@+id/btn_declare_info" />
 
         <View
             android:id="@+id/view4"
@@ -340,7 +340,7 @@
             android:background="#f4f8fb "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_declare_info" />
 
         <TextView
             android:id="@+id/textView14"
@@ -351,7 +351,7 @@
             android:text="Cảnh báo khu vực có dịch"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/button5"
+            app:layout_constraintStart_toStartOf="@+id/btn_declare_info"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
         <TextView

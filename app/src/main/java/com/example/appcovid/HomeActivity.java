@@ -7,19 +7,25 @@ import android.os.Bundle;
 
 import com.example.appcovid.feedback_fragment.FeedbackBaseFragment;
 import com.example.appcovid.home_fragment.HomeFragment;
+import com.example.appcovid.network.dto.CreateAccDto;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
 
+    private CreateAccDto acc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        acc = ((CreateAccDto) getIntent().getSerializableExtra("accinfo"));
         setupBottomNav();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_frag_container, HomeFragment.newInstance())
+                .replace(R.id.main_frag_container, HomeFragment.newInstance(acc))
                 .commit();
+
+
     }
 
     private void setupBottomNav()
@@ -30,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.bnav_home_fragment:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_frag_container, HomeFragment.newInstance())
+                            .replace(R.id.main_frag_container, HomeFragment.newInstance(acc))
                             .commit();
                     return true;
 
