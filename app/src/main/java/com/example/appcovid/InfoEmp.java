@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class InfoEmp extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class  InfoEmp extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] province = { "Chọn Tỉnh/Thành","Quảng Ninh", "Bắc Giang", "Hà Nội", "Thanh Hóa", "Hải Dương", "Hưng Yên"};
     String[] district = {"Chọn Quận/Huyện","1","2","3"};

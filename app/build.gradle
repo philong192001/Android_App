@@ -25,6 +25,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -39,4 +42,13 @@ dependencies {
     //LongPV impl
     implementation 'com.github.florent37:materialtextfield:1.0.7'
     implementation 'com.github.jaiselrahman:HintSpinner:1.0.0'
+
+//Retrofit and Moshi
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.moshi:moshi:1.12.0'
+    implementation 'com.squareup.moshi:moshi-adapters:1.12.0'
+
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 }

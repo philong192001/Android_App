@@ -31,18 +31,19 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="20sp"/>
+
             <EditText
-                android:id="@+id/mal"
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Họ Và Tên "
                 android:inputType="text"
-                android:textColor="#000"
                 android:padding="3dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -56,19 +57,20 @@
                 android:textSize="15dp"
                 android:layout_marginTop="15sp"
                 android:layout_marginLeft="25sp"/>
+
             <EditText
-                android:id="@+id/pswd"
+                android:id="@+id/et_cmt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="CMTND/CCCD/Hộ chiếu"
-                android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="25sp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5sp"
+                android:background="@null"
+                android:hint="CMTND/CCCD/Hộ chiếu"
+                android:inputType="text"
                 android:padding="3dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -82,19 +84,20 @@
                 android:textSize="15dp"
                 android:layout_marginTop="15sp"
                 android:layout_marginLeft="25sp"/>
+
             <EditText
-                android:id="@+id/bhxh"
+                android:id="@+id/et_bhxh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập mã số BHXH"
-                android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="25sp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5sp"
+                android:background="@null"
+                android:hint="Nhập mã số BHXH"
+                android:inputType="text"
                 android:padding="3dp"
-                />
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -108,18 +111,20 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
-                android:id="@+id/usrusr"
+                android:id="@+id/et_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5sp"
+                android:background="@null"
                 android:hint="Ngày/tháng/năm(VD:08/03/2020)"
                 android:inputType="datetime"
-                android:textColor="#000"
                 android:padding="3dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="5sp"/>
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -135,23 +140,24 @@
                 android:layout_marginTop="15sp"
                 />
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginLeft="35sp">
-                <RadioButton android:id="@+id/radio_pirates"
+
+                <RadioButton
+                    android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nam"
-                    android:onClick="onRadioButtonClicked"
-                    android:layout_marginRight="10sp"/>
-                <RadioButton android:id="@+id/radio_ninjas"
+                    android:layout_marginRight="10sp"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:id="@+id/radio_felame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nữ"
-                    android:onClick="onRadioButtonClicked"
-                    />
+                    android:text="Nữ" />
             </RadioGroup>
             <TableRow
                 android:layout_width="match_parent"
@@ -213,16 +219,19 @@
                 android:background="#444"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="20dp"></TableRow>
+
             <EditText
+                android:id="@+id/et_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Số nhà, đường,...."
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -236,16 +245,19 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
+                android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Số điện thoại"
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -259,31 +271,37 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="15sp"/>
+
             <EditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
                 android:hint="Nhập Email"
                 android:inputType="text"
-                android:textColor="#000"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"
-                android:padding="3dp" />
+                android:padding="3dp"
+                android:textColor="#000" />
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#444"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="20dp"></TableRow>
+                android:layout_marginRight="20dp"
+                android:background="#444"></TableRow>
+
             <Button
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tiếp Tục"
                 android:layout_marginLeft="35dp"
-                android:layout_marginRight="35dp"
                 android:layout_marginTop="35dp"
-                android:textColor="@color/white"
-                android:background="@color/black"/>
+                android:layout_marginRight="35dp"
+                android:background="@color/black"
+                android:text="Tiếp Tục"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 
