@@ -16,7 +16,6 @@ public interface OtpService {
     @POST("/football-shop-web-app-0.0.1-SNAPSHOT/v1/sms/verifyOtp")
     Call<Boolean> confirmOtp(@Body Map<String, String> body);
 
-
     @POST("/football-shop-web-app-0.0.1-SNAPSHOT/v1/declare/findAccountByPhone")
     Call<CreateAccDto> findAccByPhone(@Query("phone") String phone);
 }

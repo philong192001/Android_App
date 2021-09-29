@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Wellcome to Covit"
+        android:text="Wellcome to Covid"
         android:textColor="@color/purple_500"
         android:textSize="30dp"
 
