@@ -1,25 +1,39 @@
 package com.example.appcovid.home_fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.appcovid.DeclarePersonalInfoActivity;
 import com.example.appcovid.R;
 import com.example.appcovid.network.dto.CreateAccDto;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.chip.Chip;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnMapReadyCallback, LocationListener {
 
     private TextView detailText;
     private Button btnDeclare;
@@ -35,6 +49,14 @@ public class HomeFragment extends Fragment {
     private TextView txtInfectedInc;
     private TextView txtDeathInc;
     private TextView txtRecoveredInc;
+
+    private GoogleMap map;
+
+    private ScrollView scrollView;
+
+    private ConstraintLayout constraintLayout;
+
+    private LocationManager mLocationManager;
 
     public HomeFragment() {
 
@@ -63,6 +85,7 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -83,6 +106,9 @@ public class HomeFragment extends Fragment {
         txtDeathInc = (TextView) view.findViewById(R.id.txt_death_inc);
         txtRecoveredInc = (TextView) view.findViewById(R.id.txt_recovered_inc);
 
+        scrollView = (ScrollView) view.findViewById(R.id.scrollview) ;
+        constraintLayout = (ConstraintLayout) view.findViewById(R.id.frameLayout);
+
 
         chipVn.setOnClickListener(v -> {
             txtInfected.setText("563,677");
@@ -101,7 +127,32 @@ public class HomeFragment extends Fragment {
             txtDeathInc.setText("3,702");
             txtRecoveredInc.setText("194,185");
         });
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+
+        mLocationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000,
+                100f, this);
     }
 
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+        LatLng curr = new LatLng(location.getLatitude(), location.getLongitude());
+        map.addMarker(new MarkerOptions()
+                .position(curr));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
+    }
 
+    @SuppressLint("MissingPermission")
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        map = googleMap;
+
+        map.setMyLocationEnabled(true);
+        map.setMaxZoomPreference(map.getMaxZoomLevel());
+    }
 }

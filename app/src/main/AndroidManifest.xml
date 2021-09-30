@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appcovid">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +26,13 @@
         <activity android:name=".DeclarePersonalInfoActivity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".InfoEmp"/>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBL23QZXAbY--5Nm9z3vokMoeMb8iPQAwY" />
     </application>
+
+
 
 </manifest>
