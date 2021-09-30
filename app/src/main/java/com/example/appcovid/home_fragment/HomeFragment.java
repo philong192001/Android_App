@@ -133,26 +133,52 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         mapFragment.getMapAsync(this);
 
 
-        mLocationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
 
-        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000,
-                100f, this);
+        try{
+            mLocationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+            mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000,
+                    100f, this);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        LatLng curr = new LatLng(location.getLatitude(), location.getLongitude());
-        map.addMarker(new MarkerOptions()
-                .position(curr));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
+        try {
+            LatLng curr = new LatLng(location.getLatitude(), location.getLongitude());
+            map.addMarker(new MarkerOptions()
+                    .position(curr));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
+        }
+        catch (Exception e )
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onProviderEnabled(@NonNull String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(@NonNull String provider) {
+
     }
 
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
-
         map.setMyLocationEnabled(true);
         map.setMaxZoomPreference(map.getMaxZoomLevel());
+
+        LatLng curr = new LatLng(21.003239, 105.823505);
+        map.addMarker(new MarkerOptions()
+                .position(curr));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
     }
 }

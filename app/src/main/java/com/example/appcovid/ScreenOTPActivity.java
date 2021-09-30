@@ -30,6 +30,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
     private OtpService otpService = NetworkModule.otpService;
     private View loadingOverlay;
     private ProgressBar loadingBar;
+    private Button resendOtp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,11 @@ public class ScreenOTPActivity extends AppCompatActivity {
         loadingOverlay = findViewById(R.id.loading_overlay);
         loadingBar = findViewById(R.id.loading_prgr);
 
+        resendOtp = findViewById(R.id.btn_resend_otp);
+
         createOtp();
+
+        resendOtp.setOnClickListener(v -> createOtp());
 
     }
 
@@ -76,6 +81,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
                         Toast.makeText(ScreenOTPActivity.this, "Lỗi khi tạo otp", Toast.LENGTH_LONG).show();
                         loadingOverlay.setVisibility(View.INVISIBLE);
                         loadingBar.setVisibility(View.INVISIBLE);
+                        resendOtp.setEnabled(true);
                     }
                 }
                 else
@@ -83,6 +89,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
                     Toast.makeText(ScreenOTPActivity.this, "Lỗi khi tạo otp", Toast.LENGTH_LONG).show();
                     loadingOverlay.setVisibility(View.INVISIBLE);
                     loadingBar.setVisibility(View.INVISIBLE);
+                    resendOtp.setEnabled(true);
                 }
             }
 
@@ -157,6 +164,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
         int v = isLoading ? View.VISIBLE : View.INVISIBLE;
         otpText.setEnabled(!isLoading);
         confirmOtpBtn.setEnabled(!isLoading);
+        resendOtp.setEnabled(!isLoading);
         loadingOverlay.setVisibility(v);
         loadingBar.setVisibility(v);
     }
