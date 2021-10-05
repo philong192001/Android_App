@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProvisoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="695dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp">
+
+                    <Button
+                        android:id="@+id/button15"
+                        android:layout_width="410dp"
+                        android:layout_height="150dp"
+                        android:background="@color/black"
+                        android:text=" ĐIỀU KHOẢN SỬ DỤNG
+                                 Ứng dụng hỗ trợ y tế tự nguyện
+                        phòng chống Covid-19(NCOVI)" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="401dp"
+                        android:layout_height="35dp"
+                        android:text="Điều 1.Đăng ký tài khoản"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="25dp"
+                        android:layout_height="40dp"
+                        android:text="- Để thực hiện viện khai báo y tế tự nguyện, đầu tiên người dừng cần tải về và cài đặt ứng dụng NCOVI" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="20dp"
+                        android:layout_height="60dp"
+                        android:text="- Người sử dụng tự chịu trách nhiệm về năng lực hành vi trong việc đăng ký tài khoản và có trách nhiệm tự bảo mật thông tin tài khoản." />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="20dp"
+                        android:layout_height="65dp"
+                        android:text="- Nếu người sử dụng biết hoặc nghi ngờ rằng mã OTP hoặc tài khoản của bạn đã bị xâm nhập, hãy báo cáo cho đội ngũ hỗ trợ NCOVI tại mục liên hệ." />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:text="- Để bảo vệ tài khoản của bạn, hãy giữ bí mật mã OTP của bạn." />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="401dp"
+                        android:layout_height="25dp"
+                        android:text="Điều 2.Bảo vệ sự riêng tư và bản quyền"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="401dp"
+                        android:layout_height="110dp"
+                        android:text="- Chúng tôi xử lý dữ liệu cá nhân của bạn và bảo vệ quyền riêng tư của bạn
+ khi bạn sử dụng ứng dụng. Dữ liệu của bạn sẽ được lưu trữ và bảo mật tuyệt đối
+bởi cơ quan chính phủ và chỉ sử dụng vào mục đích giúp người dân bảo vệ sức khỏe và chống dịch bệnh, tuyệt đối
+không sử dụng vào mục đích thương mại, không xâm phạm đời tư." />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="401dp"
+                        android:layout_height="90dp"
+                        android:text="- Ngoài các mục đích trên, đơn vị phát triển ứng dụng không được phép thu nhập, sử dụng
+vào bất kỳ mục đích gì. Và sẽ không rò rỉ bất kỳ thông tin nào có thể gay tổn hại hoặc thực hiện bất kỳ hành vi bất hợp pháp
+nào về quyền riêng tư của bạn theo luật pháp Việt Nam hoặc chính sách của ứng dụng khai báo y tế tự nguyện." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="401dp"
+                        android:layout_height="25dp"
+                        android:text="Điều 3: Chấp nhận điều khoản sử dụng và sửa đổi"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="401dp"
+                        android:layout_height="65dp"
+                        android:text="Để truy cập và sử dụng Dịch vụ Tờ khai y tế, Người Sử Dụng phải đồng ý và tuân theo các điều khoản được quy định tại Thỏa thuận này và quy định." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="401dp"
+                        android:layout_height="65dp"
+                        android:text="Khi truy cập, sử dụng Tờ khai y tế bằng bất cứ phương tiện (máy tính, điện thoại, tivi thiết bị kết nối Internet) thì Người Sử Dụng cũng phải tuân theo Quy chế này." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="401dp"
+                        android:layout_height="90dp"
+                        android:text="Để đáp ứng nhu cầu sử dụng của Người Sử Dụng, Tờ khai y tế không ngừng hoàn thiện và phát triển, vì vậy các điều khoản quy định tại Thỏa thuận cung cấp và sử dụng dịch vụ nền tảng Tờ khai y tế, sẽ công bố rõ trên Website, diễn đàn về những thay đổi, bổ sung đó." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="401dp"
+                        android:layout_height="25dp"
+                        android:text="Điều 4.Quyền và nghĩa vụ của người sử dụng"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="401dp"
+                        android:layout_height="110dp"
+                        android:text="Người Sử Dụng có trách nhiệm bảo mật thông tin tài khoản, nếu những thông tin trên bị tiết lộ dưới bất kỳ hình thức nào thì Người Sử Dụng phải chấp nhận những rủi ro phát sinh. BQT Tờ khai y tế sẽ căn cứ vào những thông tin hiện có trong tài khoản để làm căn cứ quyết định chủ sở hữu tài khoản nếu có tranh chấp và BQT Tờ khai y tế sẽ không chịu trách nhiệm về mọi tổn thất phát sinh." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="401dp"
+                        android:layout_height="90dp"
+                        android:text="Người Sử Dụng đồng ý sẽ thông báo ngay cho BQT Tờ khai y tế về bất kỳ trường hợp nào sử dụng trái phép tài khoản và mật khẩu của bạn hoặc bất kỳ các hành động phá vỡ hệ thống bảo mật nào. Bạn cũng bảo đảm rằng, bạn luôn thoát tài khoản của mình sau mỗi lần sử dụng." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="401dp"
+                        android:layout_height="65dp"
+                        android:text="Người Sử Dụng có thể sẽ bị xử phạt vi phạm hành chính, bị truy tố trách nhiệm hình sự nếu bạn vi phạm về quyền tác giả, quyền liên quan khi bạn sử dụng sản phẩm nền tảng Tờ khai y tế này." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="401dp"
+                        android:layout_height="150dp"
+                        android:text="Người Sử Dụng phải tuân thủ tuyệt đối quy định về các hành vi cấm, các nội dung trao đổi cung cấp thông tin được quy định trong quy chế này. Nếu vi phạm một hoặc nhiều hành vi, tùy thuộc vào mức độ vi phạm BQT Tờ khai y tế sẽ khóa tài khoản vĩnh viễn, tước bỏ mọi quyền lợi của bạn đối các sản phẩm của BQT Tờ khai y tế và sẽ yêu cầu cơ quan chức năng truy tố bạn trước pháp luật nếu cần thiết.
+
+Thực hiện quyền và trách nhiệm khác theo quy định pháp luật." />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="401dp"
+                        android:layout_height="65dp"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:text="Đội ngũ phát triển ứng dụng NCOVI" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -11,7 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 public class NetworkModule {
     private NetworkModule() {}
 
-    private static String BASE_URL="http://192.168.1.113:8989";
+    private static String BASE_URL="http://192.168.1.5:8082";
 
     public static Moshi moshi = new Moshi.Builder()
             .add(Date.class, new Rfc3339DateJsonAdapter())
@@ -24,4 +24,6 @@ public class NetworkModule {
 
     public static OtpService otpService = retrofit.create(OtpService.class);
     public static AccountService accountService = retrofit.create(AccountService.class);
+    public static StatisticalService statisticalService = retrofit.create(StatisticalService.class);
+    public static DeclareService declareService = retrofit.create(DeclareService.class);
 }

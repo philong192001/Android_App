@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText edPhone;
+
     String[] permissions = new String[] {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btVerificationPhone = findViewById(R.id.bt_VerificationPhone);
-        EditText edPhone = findViewById(R.id.ed_phone);
+        edPhone = findViewById(R.id.ed_phone);
 
 
         btVerificationPhone.setOnClickListener(view -> {
@@ -37,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             String phone = edPhone.getText().toString();
             if(phone.isEmpty()){
                 Toast.makeText(getApplicationContext(), "Nhập số điện thoại", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!validatePhone()) {
                 return;
             }
 
@@ -83,5 +88,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return r;
+    }
+
+    private boolean validatePhone() {
+        String val = edPhone.getText().toString().trim();
+        String checkspaces = "Aw{1,20}z";
+
+        if (val.isEmpty()) {
+            edPhone.setError("Field can not be empty");
+            return false;
+        } else if (val.length() > 10) {
+            edPhone.setError("Username is too long!");
+            return false;
+        }else if (val.length() < 10) {
+            edPhone.setError("Username is too short!");
+            return false;
+        } else {
+            edPhone.setError(null);
+            return true;
+        }
     }
 }

@@ -13,15 +13,24 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appcovid.DeclarePersonalInfoActivity;
+import com.example.appcovid.EpidemicPreventionActivity;
+import com.example.appcovid.InfoEmp;
+import com.example.appcovid.InfoPersonActivity;
+import com.example.appcovid.ProvisoActivity;
 import com.example.appcovid.R;
+import com.example.appcovid.ScreenOTPActivity;
+import com.example.appcovid.network.NetworkModule;
+import com.example.appcovid.network.StatisticalService;
 import com.example.appcovid.network.dto.CreateAccDto;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,12 +41,29 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.chip.Chip;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Map;
+import java.util.logging.Logger;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class HomeFragment extends Fragment implements OnMapReadyCallback, LocationListener {
 
+    private TextView cured;
+    private TextView died;
+    private TextView sick;
     private TextView detailText;
     private Button btnDeclare;
     private CreateAccDto acc;
+    private StatisticalService statisticalService = NetworkModule.statisticalService;
+    private Map<String,Long> statistical;
+    private Date currentDateTime = Calendar.getInstance().getTime();
 
     private Chip chipVn;
     private Chip chipWorld;
@@ -49,6 +75,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     private TextView txtInfectedInc;
     private TextView txtDeathInc;
     private TextView txtRecoveredInc;
+    private Button btnHDPCD;
+    private Button btnEpidemic;
 
     private GoogleMap map;
 
@@ -66,6 +94,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         args.putSerializable("accinfo", acc);
+       // Log.d("INFO LOGIN",acc.toString());
         fragment.setArguments(args);
         return fragment;
     }
@@ -76,13 +105,32 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         if (getArguments() != null) {
             acc = ((CreateAccDto) getArguments().getSerializable("accinfo"));
         }
+
+        getStatistical();
     }
+    private String convertDateToString(Date date){
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm, dd/mm");
+        return dateFormat.format(date);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        TextView date = (TextView) rootView.findViewById(R.id.textView12);
+
+        date.setText("Cập nhật :"+convertDateToString(currentDateTime));
+
+        //Stactistical
+         sick = (TextView) rootView.findViewById(R.id.txt_infected);
+         died = (TextView) rootView.findViewById(R.id.txt_death);
+         cured = (TextView) rootView.findViewById(R.id.txt_recovered);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        return rootView;
     }
 
     @SuppressLint("MissingPermission")
@@ -90,8 +138,16 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         btnDeclare = view.findViewById(R.id.btn_declare_info);
+        btnHDPCD = view.findViewById(R.id.button6);
+
+        btnHDPCD.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "OK", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getActivity(), EpidemicPreventionActivity.class);
+            startActivity(intent);
+        } );
+
         btnDeclare.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), DeclarePersonalInfoActivity.class);
+            Intent intent = new Intent(getActivity(), DeclarePersonalInfoActivity.class);
             intent.putExtra("accinfo", acc);
             startActivity(intent);
         });
@@ -106,18 +162,18 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         txtDeathInc = (TextView) view.findViewById(R.id.txt_death_inc);
         txtRecoveredInc = (TextView) view.findViewById(R.id.txt_recovered_inc);
 
-        scrollView = (ScrollView) view.findViewById(R.id.scrollview) ;
+        scrollView = (ScrollView) view.findViewById(R.id.scrollview);
         constraintLayout = (ConstraintLayout) view.findViewById(R.id.frameLayout);
 
 
-        chipVn.setOnClickListener(v -> {
-            txtInfected.setText("563,677");
-            txtDeath.setText("14,135");
-            txtRecovered.setText("325,674");
-            txtInfectedInc.setText("14,435");
-            txtDeathInc.setText("362");
-            txtRecoveredInc.setText("15,234");
-        });
+//        chipVn.setOnClickListener(v -> {
+//            txtInfected.setText("563,677");
+//            txtDeath.setText("14,135");
+//            txtRecovered.setText("325,674");
+//            txtInfectedInc.setText("14,435");
+//            txtDeathInc.setText("362");
+//            txtRecoveredInc.setText("15,234");
+//        });
 
         chipWorld.setOnClickListener(v -> {
             txtInfected.setText("219,563,677");
@@ -143,6 +199,60 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         {
             e.printStackTrace();
         }
+    }
+    private void getStatistical(){
+
+        Call<Map<String,Long>> call = statisticalService.getStatistical();
+
+        call.enqueue(new Callback<Map<String,Long>>() {
+            @Override
+            public void onResponse(Call<Map<String,Long>> call, Response<Map<String,Long>> response) {
+                if(response.isSuccessful())
+                {
+                    statistical = response.body();
+//                    if(response != null){
+//                        Log.d("INFO123","Hello123");
+//                    }
+                    if(statistical != null)
+                    {
+                        Log.d("INFO123","Hello" + statistical);
+                        for (Map.Entry<String, Long> entry : statistical.entrySet()) {
+                            if (entry.getKey().equals("sick")){
+                                sick.setText(entry.getValue().toString());
+                                txtInfectedInc.setText("+" + entry.getValue().toString());
+                            }
+                            else if(entry.getKey().equals("cured")){
+                                cured.setText(entry.getValue().toString());
+                                txtRecoveredInc.setText("+" + entry.getValue().toString());
+                            }else  if (entry.getKey().equals("died")){
+                                died.setText(entry.getValue().toString());
+                                txtDeathInc.setText("+" + entry.getValue().toString());
+                            }
+//                            Log.d( "COnvert","Key : " + entry.getKey() + ", Value : " + entry.getValue());
+                        }
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "Data null", Toast.LENGTH_LONG).show();
+                    }
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Map<String,Long>> call, Throwable t) {
+                t.printStackTrace();
+                Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -180,5 +290,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         map.addMarker(new MarkerOptions()
                 .position(curr));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
+    }
+
+    public void CallNotiDemo(){
+
     }
 }

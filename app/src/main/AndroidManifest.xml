@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appcovid">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCovid">
+        android:theme="@style/Theme.AppCovid"
+        android:usesCleartextTraffic="true">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -22,17 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScreenOTPActivity"/>
-        <activity android:name=".DeclarePersonalInfoActivity"/>
-        <activity android:name=".HomeActivity"/>
-        <activity android:name=".InfoEmp"/>
+        <activity android:name=".ScreenOTPActivity" />
+        <activity android:name=".DeclarePersonalInfoActivity" />
+        <activity android:name=".PatientActivity" />
+         <activity android:name=".HomeActivity" />
+        <activity android:name=".InfoEmp" />
+        <activity android:name=".ProvisoActivity"/>
+        <activity android:name=".InfoPersonActivity" />
+        <activity android:name=".EpidemicPreventionActivity" />
+        <activity android:name=".InfomationUserActivity" />
 
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBL23QZXAbY--5Nm9z3vokMoeMb8iPQAwY" />
     </application>
-
-
 
 </manifest>

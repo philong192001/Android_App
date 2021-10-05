@@ -5,39 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- <TextView
-         android:id="@+id/tvTitle"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textStyle="bold"
-         android:textSize="20dp"
-         android:layout_marginTop="10dp"
-         android:text="Danh mục"/>
-
-     <TextView
-         android:id="@+id/tvUsername"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/tvTitle"
-         android:layout_alignParentLeft="true"
-         android:layout_marginLeft="10dp"
-         android:layout_marginTop="75dp"
-         android:text="Username:"
-         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-     <EditText
-         android:id="@+id/usernameET"
-         android:layout_width="200dp"
-         android:layout_height="wrap_content"
-         android:layout_alignBottom="@+id/tvUsername"
-         android:layout_marginLeft="35dp"
-         android:layout_toRightOf="@+id/tvUsername"
-         android:hint="admin" >
-         <requestFocus />
-     </EditText>-->
-
-
-
 
     <TextView
         android:id="@+id/textView"
@@ -68,7 +35,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="588dp"
-        android:text="Thông tin cá nhân" />
+        android:text="Thông tin cá nhân " />
 
     <Button
         android:id="@+id/button2"

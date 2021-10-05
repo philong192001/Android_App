@@ -116,7 +116,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
         //call api to confirm otp
 
         Map<String, String> body = new HashMap<>();
-        body.put("otp", otpText.getText().toString());
+        body.put("otp", otp);
         Call<Boolean> call = otpService.confirmOtp(body);
 
         call.enqueue(new Callback<Boolean>() {

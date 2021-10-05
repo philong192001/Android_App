@@ -18,7 +18,7 @@
         android:id="@+id/mal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Họ Và Tên "
+        android:hint="Nhập Họ Và Tên"
         android:inputType="text"
         android:textColor="#000"
         android:padding="3dp"

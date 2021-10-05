@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 case R.id.bnav_category_fragment:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_frag_container, category_fragment.newInstance())
+                            .replace(R.id.main_frag_container, category_fragment.newInstance(acc))
                             .commit();
                     return true;
 

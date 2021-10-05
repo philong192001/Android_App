@@ -20,6 +20,9 @@ public interface AccountService {
     @POST("/football-shop-web-app-0.0.1-SNAPSHOT/v1/declare/createAccount")
     Call<MessDto> createAccount(@Body CreateAccDto body);
 
+    @POST("/football-shop-web-app-0.0.1-SNAPSHOT/v1/declare/updateAccount")
+    Call<MessDto> updateAccount(@Body CreateAccDto body);
+
     @GET("/football-shop-web-app-0.0.1-SNAPSHOT/v1/address/allProvince")
     Call<List<ProvinceDto>> getAllProvince();
 

@@ -1,25 +1,32 @@
 package com.example.appcovid;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.appcovid.home_fragment.HomeFragment;
+import com.example.appcovid.network.dto.CreateAccDto;
 
 
 public class category_fragment extends Fragment {
 
+    Button category;
+    Button Proviso;
+    CreateAccDto dto = new CreateAccDto();
     public category_fragment() {
 
     }
-    public static category_fragment newInstance() {
+    public static category_fragment newInstance(CreateAccDto acc) {
         category_fragment fragment = new category_fragment();
         Bundle args = new Bundle();
+        args.putSerializable("accinfo", acc);
 
         fragment.setArguments(args);
         return fragment;
@@ -29,6 +36,9 @@ public class category_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            dto = ((CreateAccDto) getArguments().getSerializable("accinfo"));
+
+            Log.d("adsafdABC",dto.toString());
 
         }
     }
@@ -44,6 +54,19 @@ public class category_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        category = view.findViewById(R.id.button);
+        Proviso = view.findViewById(R.id.button3);
+
+        Proviso.setOnClickListener(v ->{
+            Intent intent = new Intent(getActivity(), ProvisoActivity.class);
+            startActivity(intent);
+        } );
+
+        category.setOnClickListener(v ->{
+            Intent intent = new Intent(getActivity(), InfomationUserActivity.class);
+            intent.putExtra("info",dto);
+            startActivity(intent);
+        } );
     }
 }
 
