@@ -2,7 +2,6 @@ package com.example.appcovid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -152,11 +151,6 @@ public class ScreenOTPActivity extends AppCompatActivity {
 
         setLoadingState(true);
 
-        //delete this before calling real api
-        /*Intent intent = new Intent(this, DeclarePersonalInfoActivity.class);
-        intent.putExtra("phone", phone);
-        startActivity(intent);
-        finish();*/
     }
 
     private void setLoadingState(boolean isLoading)
@@ -191,7 +185,7 @@ public class ScreenOTPActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent(ScreenOTPActivity.this, InfoEmp.class);
+                    Intent intent = new Intent(ScreenOTPActivity.this, RegisterActivity.class);
                     intent.putExtra("phone", phone);
                     startActivity(intent);
                     finish();

@@ -18,23 +18,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appcovid.DeclarePersonalInfoActivity;
 import com.example.appcovid.EpidemicPreventionActivity;
-import com.example.appcovid.InfoEmp;
-import com.example.appcovid.InfoPersonActivity;
-import com.example.appcovid.ProvisoActivity;
 import com.example.appcovid.R;
-import com.example.appcovid.ScreenOTPActivity;
 import com.example.appcovid.network.NetworkModule;
 import com.example.appcovid.network.StatisticalService;
 import com.example.appcovid.network.dto.CreateAccDto;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -46,7 +42,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,6 +50,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment implements OnMapReadyCallback, LocationListener {
 
+    private ImageButton btnrf;
     private TextView cured;
     private TextView died;
     private TextView sick;
@@ -105,11 +101,10 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         if (getArguments() != null) {
             acc = ((CreateAccDto) getArguments().getSerializable("accinfo"));
         }
-
         getStatistical();
     }
     private String convertDateToString(Date date){
-        DateFormat dateFormat = new SimpleDateFormat("hh:mm, dd/mm");
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm, dd/MM");
         return dateFormat.format(date);
     }
 
@@ -139,7 +134,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         super.onViewCreated(view, savedInstanceState);
         btnDeclare = view.findViewById(R.id.btn_declare_info);
         btnHDPCD = view.findViewById(R.id.button6);
+        btnrf = view.findViewById(R.id.imageButton);
 
+        btnrf.setOnClickListener(v -> {
+            getStatistical();
+            Toast.makeText(getActivity(), "Refesh Data", Toast.LENGTH_LONG).show();
+
+        } );
         btnHDPCD.setOnClickListener(v -> {
             Toast.makeText(getActivity(), "OK", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(getActivity(), EpidemicPreventionActivity.class);
@@ -166,19 +167,14 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         constraintLayout = (ConstraintLayout) view.findViewById(R.id.frameLayout);
 
 
-//        chipVn.setOnClickListener(v -> {
-//            txtInfected.setText("563,677");
-//            txtDeath.setText("14,135");
-//            txtRecovered.setText("325,674");
-//            txtInfectedInc.setText("14,435");
-//            txtDeathInc.setText("362");
-//            txtRecoveredInc.setText("15,234");
-//        });
+        chipVn.setOnClickListener(v -> {
+            getStatistical();
+        });
 
         chipWorld.setOnClickListener(v -> {
-            txtInfected.setText("219,563,677");
+            txtInfected.setText("219,563,67");
             txtDeath.setText("4,551,262");
-            txtRecovered.setText("210,533,555");
+            txtRecovered.setText("210,533,55");
             txtInfectedInc.setText("175,090");
             txtDeathInc.setText("3,702");
             txtRecoveredInc.setText("194,185");
@@ -292,7 +288,4 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(curr, (float) (map.getMaxZoomLevel()*0.73)));
     }
 
-    public void CallNotiDemo(){
-
-    }
 }

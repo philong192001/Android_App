@@ -241,10 +241,6 @@ public class InfomationUserActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-                else
-                {
-
-                }
             }
 
             @Override

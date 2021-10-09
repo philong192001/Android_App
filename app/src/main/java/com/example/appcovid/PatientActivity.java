@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,7 +32,9 @@ public class PatientActivity extends AppCompatActivity {
     private RadioButton rbtKhong1;
     private RadioButton rbtCo2;
     private RadioButton rbtKhong2;
-
+    private RadioGroup rdgtiepxuc;
+    private RadioGroup rdgdivetuvungdich;
+    private RadioGroup rdgtiepxucvungdich;
     private EditText etThongtin;
 
     private CheckBox cbSot;
@@ -53,7 +56,7 @@ public class PatientActivity extends AppCompatActivity {
     private CheckBox cbUngThu;
     private CheckBox cbCoThai;
 
-    private CheckBox btnOK;
+    private CheckBox cbOK;
 
     private DeclareService declareService = NetworkModule.declareService;
 
@@ -96,13 +99,16 @@ public class PatientActivity extends AppCompatActivity {
         cbTieuDuong =(CheckBox)  findViewById(R.id.checkbox_tieuduong);
         cbUngThu = (CheckBox) findViewById(R.id.checkbox_ungthu);
         cbCoThai = (CheckBox) findViewById(R.id.checkbox_cothai);
-
-        btnOK = (CheckBox) findViewById(R.id.ok);
-
         etThongtin = findViewById(R.id.editTextThongtin);
-        //code cua long
 
+        cbOK = (CheckBox) findViewById(R.id.ok);
         btn = (Button) findViewById(R.id.btn_submit);
+        btn.setEnabled(false);
+        //
+        rdgtiepxuc = (RadioGroup)findViewById(R.id.rdgtiepxuc);
+        rdgdivetuvungdich = (RadioGroup) findViewById(R.id.divetuvungdich);
+        rdgtiepxucvungdich = (RadioGroup) findViewById(R.id.tiepxucvoithangngudituvungdichve);
+
         radioButton = findViewById(R.id.radio_co);
         radioButton = findViewById(R.id.radio_co1);
         radioButton = findViewById(R.id.radio_co2);
@@ -110,6 +116,9 @@ public class PatientActivity extends AppCompatActivity {
     }
 
     public void Submit() {
+        if(!ValidationExposureToCovid() | !ValidationComingFromCovidArea() | !ValidationContactWithACaseOfReturningFromTheCovidArea() | !validate14days()){
+            return;
+        }
 
         PostDecDto dto = new PostDecDto();
         dto.name = dec.name;
@@ -153,7 +162,6 @@ public class PatientActivity extends AppCompatActivity {
         call.enqueue(new Callback<MessDto>() {
             @Override
             public void onResponse(Call<MessDto> call, Response<MessDto> response) {
-                btnOK.setEnabled(true);
                 //Log.d("ALo ALo","123");
                 if(response.isSuccessful())
                 {
@@ -168,7 +176,7 @@ public class PatientActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<MessDto> call, Throwable t) {
-                btnOK.setEnabled(true);
+                cbOK.setEnabled(false);
                 t.printStackTrace();
                 Toast.makeText(PatientActivity.this, "Lỗi khi khai bao y te", Toast.LENGTH_LONG).show();
             }
@@ -177,4 +185,52 @@ public class PatientActivity extends AppCompatActivity {
 
     }
 
+    private boolean ValidationExposureToCovid(){
+        int isSelected = rdgtiepxuc.getCheckedRadioButtonId();
+
+        if(isSelected == -1){
+            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            return false;
+        }else{
+            return  true;
+        }
+    }
+    private boolean ValidationComingFromCovidArea(){
+        int isSelected = rdgdivetuvungdich.getCheckedRadioButtonId();
+
+        if(isSelected == -1){
+            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            return false;
+        }else{
+            return  true;
+        }
+    }
+    private boolean ValidationContactWithACaseOfReturningFromTheCovidArea(){
+        int isSelected = rdgtiepxucvungdich.getCheckedRadioButtonId();
+
+        if(isSelected == -1){
+            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            return false;
+        }else{
+            return  true;
+        }
+    }
+    private boolean validate14days() {
+        String val = etThongtin.getText().toString().trim();
+        if (val.isEmpty()) {
+            etThongtin.setError("Field can not be empty");
+            return false;
+        } else {
+            etThongtin.setError(null);
+            return true;
+        }
+    }
+
+    public void Check(View view) {
+        if(cbOK.isChecked()){
+            btn.setEnabled(true);
+        }else{
+            btn.setEnabled(false);
+        }
+    }
 }

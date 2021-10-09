@@ -7,6 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="khaki">#f0e68c</color>
+    <color name="gold">#ffd700</color>
+    <color name="darkturquoise">#00ced1</color>
+    <color name="mediumorchid">#ba55d3</color>
+    <color name="lightseagreen">#20b2aa</color>
+    <color name="lightpink">#ffb6c1</color>
+    <color name="lightskyblue">#87cefa</color>
+    <color name="mediumslateblue">#7b68ee</color>
+    <color name="mediumspringgreen">#00fa9a</color>
+    <color name="palegreen">#98fb98</color>
+    <color name="slategray">#708090</color>
+    <color name="salmon">#fa8072</color>
+    <color name="wheat">#f5deb3</color>
     <color name="ncoviblue">#2e3192</color>
+    <color name="lavender">#e6e6fa</color>
+    lavender
 </resources>

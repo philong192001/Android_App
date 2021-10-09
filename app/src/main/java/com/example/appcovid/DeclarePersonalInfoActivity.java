@@ -23,6 +23,7 @@ import com.example.appcovid.network.dto.MessDto;
 import com.example.appcovid.network.dto.PostDecDto;
 import com.example.appcovid.network.dto.ProvinceDto;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,7 +38,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
 
     private EditText etFullname;
     private EditText etCmt;
-    private EditText etBhxh;
     private EditText etDob;
     private EditText etAddress;
     private EditText etPhone;
@@ -60,7 +60,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
 
         etFullname = findViewById(R.id.et_name);
         etCmt = findViewById(R.id.et_cmt);
-        etBhxh = findViewById(R.id.et_bhxh);
         etDob = findViewById(R.id.et_dob);
         etAddress = findViewById(R.id.et_address);
         etPhone = findViewById(R.id.et_phone);
@@ -73,6 +72,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         etPhone.setText(dto.phone);
         etFullname.setText(dto.name);
         etCmt.setText(dto.cmt);
+        etDob.setText(convertDateToString(dto.birthDay));
         etAddress.setText(dto.address);
         rbtMale.setChecked(dto.gender);
 
@@ -92,6 +92,11 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+    }
+
+    private String convertDateToString(Date date){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dateFormat.format(date);
     }
 
     private void loadSpinners()
@@ -161,9 +166,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
                         }
                     });
                 }
-                else {
-
-                }
             }
 
             @Override
@@ -201,7 +203,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
 
     private void submitInfo(){
         btnReg.setEnabled(true);
-        if (!validateFullName()| !validateAddress() | !validateCMT() | !validateBHXH() | !validateGender() | !validatePhone() | !validateEmail() ) {
+        if (!validateFullName()| !validateAddress() | !validateCMT() | !validateGender() | !validatePhone() | !validateEmail() ) {
             return;
         }
 
@@ -217,7 +219,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
             Log.d("ERROR",e.getMessage());
         }
         dto.cmt = etCmt.getText().toString();
-        dto.BHXH = etBhxh.getText().toString();
         dto.gender = rbtMale.isChecked();
         dto.phone = etPhone.getText().toString();
         dto.idCommune = ((CommuneDto) spin_wards.getSelectedItem()).communeId;
@@ -232,30 +233,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         intent.putExtra("info_user_1", dto);
         startActivity(intent);
         finish();
-
-//        Call<MessDto> call = accountService.createAccount(dto);
-//        call.enqueue(new Callback<MessDto>() {
-//            @Override
-//            public void onResponse(Call<MessDto> call, Response<MessDto> response) {
-//                btnReg.setEnabled(true);
-//                if(response.isSuccessful())
-//                {
-//                    MessDto r = response.body();
-//
-//                }
-//                else
-//                {
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MessDto> call, Throwable t) {
-//                btnReg.setEnabled(true);
-//                t.printStackTrace();
-//                Toast.makeText(InfoEmp.this, "Lỗi khi tạo account", Toast.LENGTH_LONG).show();
-//            }
-//        });
     }
 
     private boolean validateFullName(){
@@ -275,22 +252,6 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
             return false;
         } else {
             etCmt.setError(null);
-            return true;
-        }
-    }
-    private boolean validateBHXH(){
-        String val = etBhxh.getText().toString().trim();
-        if (val.isEmpty()) {
-            etBhxh.setError("Enter valid BHXH");
-            return false;
-        }else if (val.length() > 10) {
-            etBhxh.setError("BHXH is too long!");
-            return false;
-        }else if (val.length() < 10) {
-            etBhxh.setError("BHXH is too short!");
-            return false;
-        }  else {
-            etBhxh.setError(null);
             return true;
         }
     }

@@ -5,7 +5,7 @@
     <item
         android:id="@+id/bnav_home_fragment"
         android:icon="@drawable/ic_home_24"
-        android:title="Home"
+        android:title="Trang chủ"
         app:showAsAction="always" />
     <item
         android:id="@+id/bnav_health_fragment"
@@ -13,7 +13,8 @@
         android:title="Sức khỏe"
         app:showAsAction="always" />
     <item
-        android:title=" "
+        android:id="@+id/bnav_QRCode"
+        android:title=""
         app:showAsAction="always" />
     <item
         android:id="@+id/bnav_feedback_fragment"

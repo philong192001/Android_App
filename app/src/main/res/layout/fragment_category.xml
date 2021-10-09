@@ -6,6 +6,16 @@
     android:layout_height="match_parent">
 
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="265dp"
+        android:layout_height="61dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="221dp"
+        android:text="Đăng xuất" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="152dp"
@@ -23,9 +33,10 @@
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="317dp"
-        android:layout_marginBottom="588dp"
+        android:layout_marginEnd="310dp"
+        android:layout_marginBottom="541dp"
         app:srcCompat="@drawable/user" />
+
 
     <Button
         android:id="@+id/button"
@@ -33,8 +44,8 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="588dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="538dp"
         android:text="Thông tin cá nhân " />
 
     <Button
@@ -44,7 +55,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="47dp"
-        android:layout_marginBottom="518dp"
+        android:layout_marginBottom="473dp"
         android:text="Giám sát cách ly" />
 
     <Button
@@ -54,7 +65,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="47dp"
-        android:layout_marginBottom="452dp"
+        android:layout_marginBottom="413dp"
         android:text="Điều khoản sử dụng" />
 
     <Button
@@ -63,8 +74,8 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="348dp"
         android:text="Gửi hỏi đáp" />
 
     <Button
@@ -73,8 +84,8 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="326dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="284dp"
         android:text="Ứng dụng NCOVI - Fanpage" />
 
     <ImageView
@@ -83,8 +94,18 @@
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="317dp"
-        android:layout_marginBottom="326dp"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="284dp"
+        app:srcCompat="@drawable/facebook" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="69dp"
+        android:layout_height="54dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="225dp"
         app:srcCompat="@drawable/facebook" />
 
     <ImageView
@@ -93,8 +114,8 @@
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="317dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginEnd="315dp"
+        android:layout_marginBottom="351dp"
         app:srcCompat="@drawable/send" />
 
     <ImageView
@@ -103,8 +124,8 @@
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="317dp"
-        android:layout_marginBottom="518dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="481dp"
         app:srcCompat="@drawable/shield" />
 
     <ImageView
@@ -113,8 +134,9 @@
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="317dp"
-        android:layout_marginBottom="452dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="415dp"
         app:srcCompat="@drawable/rules" />
+
 
 </RelativeLayout>

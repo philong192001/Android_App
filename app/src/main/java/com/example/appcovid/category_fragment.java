@@ -19,6 +19,7 @@ public class category_fragment extends Fragment {
 
     Button category;
     Button Proviso;
+    Button logout;
     CreateAccDto dto = new CreateAccDto();
     public category_fragment() {
 
@@ -56,7 +57,12 @@ public class category_fragment extends Fragment {
 
         category = view.findViewById(R.id.button);
         Proviso = view.findViewById(R.id.button3);
+        logout = view.findViewById(R.id.logout);
 
+        logout.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+        });
         Proviso.setOnClickListener(v ->{
             Intent intent = new Intent(getActivity(), ProvisoActivity.class);
             startActivity(intent);
