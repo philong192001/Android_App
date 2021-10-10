@@ -2,20 +2,15 @@ package com.example.appcovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.appcovid.network.dto.CreateAccDto;
-import com.example.appcovid.network.dto.QRcode;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -35,7 +30,6 @@ public class QRCodeActivity extends AppCompatActivity {
     TextView txtime;
     private Date currentDateTime = Calendar.getInstance().getTime();
 
-    QRcode qrcode = new QRcode();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,9 +1,15 @@
 package com.example.appcovid.network.dto;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class CreateAccDto implements Serializable {
+
+    @Expose
+    @SerializedName( "Họ và Tên")
     public String name;
     public Date birthDay;
     public String cmt;
@@ -12,18 +18,29 @@ public class CreateAccDto implements Serializable {
     public long idCommune;
     public String address;
 
+
+    private String checkGender(){
+        if(gender == true){
+            return "Nam";
+        }else{
+            return  "Nữ";
+        }
+
+    }
     @Override
     public String toString() {
-        return "CreateAccDto{" +
-                "name='" + name + '\'' +
-                ", birthDay=" + birthDay +
-                ", cmt='" + cmt + '\'' +
-                ", gender=" + gender +
-                ", phone='" + phone + '\'' +
-                ", idCommune=" + idCommune +
-                ", address='" + address + '\'' +
+        return "Thong tin khai bao{" +
+                "Ho va Ten ='" + name + '\'' +
+                ", Ngày Sinh =" + birthDay +
+                ", Sô CMTND='" + cmt + '\'' +
+                ", Giơi Tính=" + checkGender() +
+                ", Sô Diên Thoai ='" + phone + '\'' +
+                ", Dia Chi =" + idCommune +
+                ", Sô duong , nha='" + address + '\'' +
                 '}';
     }
+
+
 }
 
 

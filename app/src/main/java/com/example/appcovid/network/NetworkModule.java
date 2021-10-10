@@ -11,7 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 public class NetworkModule {
     private NetworkModule() {}
 
-    private static String BASE_URL="http://192.168.1.5:8082";
+    private static String BASE_URL="http://192.168.12.206:8082";
 
     public static Moshi moshi = new Moshi.Builder()
             .add(Date.class, new Rfc3339DateJsonAdapter())

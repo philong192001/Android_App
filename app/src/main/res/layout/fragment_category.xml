@@ -12,7 +12,7 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginBottom="221dp"
         android:text="Đăng xuất" />
 
@@ -37,15 +37,14 @@
         android:layout_marginBottom="541dp"
         app:srcCompat="@drawable/user" />
 
-
     <Button
         android:id="@+id/button"
         android:layout_width="265dp"
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="538dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="541dp"
         android:text="Thông tin cá nhân " />
 
     <Button
@@ -54,8 +53,8 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="473dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="476dp"
         android:text="Giám sát cách ly" />
 
     <Button
@@ -64,7 +63,7 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="47dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginBottom="413dp"
         android:text="Điều khoản sử dụng" />
 
@@ -84,9 +83,9 @@
         android:layout_height="61dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="43dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginBottom="284dp"
-        android:text="Ứng dụng NCOVI - Fanpage" />
+        android:text="Ứng dụng COVID BY BUGGER - Fanpage" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -106,7 +105,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="312dp"
         android:layout_marginBottom="225dp"
-        app:srcCompat="@drawable/facebook" />
+        app:srcCompat="@drawable/logout" />
 
     <ImageView
         android:id="@+id/imageView3"
