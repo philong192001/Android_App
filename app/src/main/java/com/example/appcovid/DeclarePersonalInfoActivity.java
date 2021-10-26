@@ -69,10 +69,15 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         rdg = (RadioGroup) findViewById(R.id.rdgGender);
 
         dto = (CreateAccDto) getIntent().getSerializableExtra("accinfo");
+
+        Log.d("do123",dto.phone);
+
         etPhone.setText(dto.phone);
         etFullname.setText(dto.name);
         etCmt.setText(dto.cmt);
-        etDob.setText(convertDateToString(dto.birthDay));
+        if(dto.birthDay != null){
+            etDob.setText(convertDateToString(dto.birthDay));
+        }
         etAddress.setText(dto.address);
         rbtMale.setChecked(dto.gender);
 
@@ -238,7 +243,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private boolean validateFullName(){
         String val = etFullname.getText().toString().trim();
         if (val.isEmpty()) {
-            etFullname.setError("Field can not be empty");
+            etFullname.setError("Không được để trống");
             return false;
         } else {
             etFullname.setError(null);
@@ -248,7 +253,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private boolean validateCMT(){
         String val = etCmt.getText().toString().trim();
         if (val.isEmpty()) {
-            etCmt.setError("Field can not be empty");
+            etCmt.setError("Không được để trống");
             return false;
         } else {
             etCmt.setError(null);
@@ -268,7 +273,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
 //    }
     private boolean validateGender(){
         if (rdg.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "Please Select Gender", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Hãy chọn giới tính", Toast.LENGTH_SHORT).show();
             return false;
         } else {
             return true;
@@ -277,7 +282,7 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private boolean validateAddress(){
         String val = etAddress.getText().toString().trim();
         if (val.isEmpty()) {
-            etAddress.setError("Enter valid Address");
+            etAddress.setError("Hãy nhập địa chỉ cụ thể");
             return false;
         } else {
             etAddress.setError(null);
@@ -287,13 +292,13 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
     private boolean validatePhone(){
         String val = etPhone.getText().toString().trim();
         if (val.isEmpty()) {
-            etPhone.setError("Enter valid phone number");
+            etPhone.setError("Chưa nhập số điện thoại");
             return false;
         }else if (val.length() > 10) {
-            etPhone.setError("phone is too long!");
+            etPhone.setError("Số điện thoại quá dài !");
             return false;
         }else if (val.length() < 10) {
-            etPhone.setError("phone is too short!");
+            etPhone.setError("Số điện thoại quá ngắn !");
             return false;
         } else {
             etPhone.setError(null);
@@ -305,10 +310,10 @@ public class DeclarePersonalInfoActivity extends AppCompatActivity implements Ad
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
 
         if (val.isEmpty()) {
-            etEmail.setError("Field can not be empty");
+            etEmail.setError("Không được để trống email");
             return false;
         } else if (!val.matches(checkEmail)) {
-            etEmail.setError("Invalid Email!");
+            etEmail.setError("Không đúng định dạng email !");
             return false;
         } else {
             etEmail.setError(null);

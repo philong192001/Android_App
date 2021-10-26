@@ -24,15 +24,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sqllite.AddEditNoteActivity"/>
         <activity android:name=".ScreenOTPActivity" />
         <activity android:name=".DeclarePersonalInfoActivity" />
         <activity android:name=".PatientActivity" />
-         <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ProvisoActivity"/>
+        <activity android:name=".ProvisoActivity" />
         <activity android:name=".EpidemicPreventionActivity" />
-        <activity android:name=".QRCodeActivity"/>
+        <activity android:name=".QRCodeActivity" />
         <activity android:name=".InfomationUserActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBL23QZXAbY--5Nm9z3vokMoeMb8iPQAwY" />

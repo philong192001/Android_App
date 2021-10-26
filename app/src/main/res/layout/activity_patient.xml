@@ -7,7 +7,8 @@
     tools:context=".PatientActivity"
     app:layout_constraintVertical_bias="0"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
+    app:layout_constraintEnd_toEndOf="parent"
+    >
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -67,6 +68,7 @@
             </TableRow>
             <TableRow>
                 <TextView
+                    android:id="@+id/toast_text"
                     android:layout_width="0dp"
                     android:layout_height="68dp"
                     android:layout_marginLeft="5sp"
@@ -422,6 +424,7 @@
                 android:layout_marginTop="15sp"
                 android:onClick="Check"
                 android:hint="Tôi cam kết các thông tin khai là đúng sự thật " />
+
             <Button
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"

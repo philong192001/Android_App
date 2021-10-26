@@ -29,6 +29,7 @@ import com.example.appcovid.R;
 import com.example.appcovid.network.NetworkModule;
 import com.example.appcovid.network.StatisticalService;
 import com.example.appcovid.network.dto.CreateAccDto;
+import com.example.appcovid.network.dto.DiseaseInfo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -38,6 +39,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.chip.Chip;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -58,7 +60,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     private Button btnDeclare;
     private CreateAccDto acc;
     private StatisticalService statisticalService = NetworkModule.statisticalService;
-    private Map<String,Long> statistical;
+    private DiseaseInfo diseaseInfo;
     private Date currentDateTime = Calendar.getInstance().getTime();
 
     private Chip chipVn;
@@ -81,6 +83,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     private ConstraintLayout constraintLayout;
 
     private LocationManager mLocationManager;
+    DecimalFormat formatter = new DecimalFormat("###,###,###");
 
     public HomeFragment() {
 
@@ -172,12 +175,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         });
 
         chipWorld.setOnClickListener(v -> {
-            txtInfected.setText("219,563,67");
-            txtDeath.setText("4,551,262");
-            txtRecovered.setText("210,533,55");
-            txtInfectedInc.setText("175,090");
-            txtDeathInc.setText("3,702");
-            txtRecoveredInc.setText("194,185");
+            getStatisticalWorld();
         });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
@@ -198,57 +196,81 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     }
     private void getStatistical(){
 
-        Call<Map<String,Long>> call = statisticalService.getStatistical();
+        Call<DiseaseInfo> call = statisticalService.getDataNcov();
 
-        call.enqueue(new Callback<Map<String,Long>>() {
+        call.enqueue(new Callback<DiseaseInfo>() {
             @Override
-            public void onResponse(Call<Map<String,Long>> call, Response<Map<String,Long>> response) {
-                if(response.isSuccessful())
-                {
-                    statistical = response.body();
-//                    if(response != null){
-//                        Log.d("INFO123","Hello123");
-//                    }
-                    if(statistical != null)
-                    {
-                        Log.d("INFO123","Hello" + statistical);
-                        for (Map.Entry<String, Long> entry : statistical.entrySet()) {
-                            if (entry.getKey().equals("sick")){
-                                sick.setText(entry.getValue().toString());
-                                txtInfectedInc.setText("+" + entry.getValue().toString());
-                            }
-                            else if(entry.getKey().equals("cured")){
-                                cured.setText(entry.getValue().toString());
-                                txtRecoveredInc.setText("+" + entry.getValue().toString());
-                            }else  if (entry.getKey().equals("died")){
-                                died.setText(entry.getValue().toString());
-                                txtDeathInc.setText("+" + entry.getValue().toString());
-                            }
-//                            Log.d( "COnvert","Key : " + entry.getKey() + ", Value : " + entry.getValue());
-                        }
-                    }
-                    else
-                    {
+            public void onResponse(Call<DiseaseInfo> call, Response<DiseaseInfo> response) {
+                if (response.isSuccessful()) {
+                    diseaseInfo = response.body();
+                    Log.d("INFO 1234", String.valueOf(diseaseInfo.getTotal().getInternal().getCases()));
+
+                    //total.internal.death
+                    //total.internal.recovered
+                    //total.internal.cases
+                    //total.world
+                    //today
+                    if (diseaseInfo != null) {
+                        //VN
+                        String money = formatter.format(diseaseInfo.getTotal().getInternal().getCases());
+                        sick.setText(money);
+                        txtInfectedInc.setText("+" + formatter.format(diseaseInfo.getToday().getInternal().getCases()));
+                        cured.setText(formatter.format(diseaseInfo.getTotal().getInternal().getRecovered()));
+                        txtRecoveredInc.setText("+" + formatter.format(diseaseInfo.getToday().getInternal().getRecovered()));
+                        died.setText(formatter.format(diseaseInfo.getTotal().getInternal().getDeath()));
+                        txtDeathInc.setText("+" + formatter.format(diseaseInfo.getToday().getInternal().getDeath()));
+
+                    } else {
                         Toast.makeText(getActivity(), "Data null", Toast.LENGTH_LONG).show();
                     }
-                }
-                else
-                {
+                } else {
                     Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
 
                 }
-            }
 
+            }
             @Override
-            public void onFailure(Call<Map<String,Long>> call, Throwable t) {
+            public void onFailure(Call<DiseaseInfo> call, Throwable t) {
                 t.printStackTrace();
                 Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
             }
         });
 
+    }
 
+    private void getStatisticalWorld(){
 
+        Call<DiseaseInfo> call = statisticalService.getDataNcov();
 
+        call.enqueue(new Callback<DiseaseInfo>() {
+            @Override
+            public void onResponse(Call<DiseaseInfo> call, Response<DiseaseInfo> response) {
+                if (response.isSuccessful()) {
+                    diseaseInfo = response.body();
+                    if (diseaseInfo != null) {
+                        //World
+                        txtInfected.setText(formatter.format(diseaseInfo.getTotal().getWorld().getCases()));
+                        txtDeath.setText(formatter.format(diseaseInfo.getTotal().getWorld().getDeath()));
+                        txtRecovered.setText(formatter.format(diseaseInfo.getTotal().getWorld().getRecovered()));
+                        txtInfectedInc.setText("+" + formatter.format(diseaseInfo.getToday().getWorld().getCases()));
+                        txtDeathInc.setText( "+" + formatter.format(diseaseInfo.getToday().getWorld().getDeath()));
+                        txtRecoveredInc.setText( "+" + formatter.format(diseaseInfo.getToday().getWorld().getRecovered()));
+
+                    } else {
+                        Toast.makeText(getActivity(), "Data null", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+            @Override
+            public void onFailure(Call<DiseaseInfo> call, Throwable t) {
+                t.printStackTrace();
+                Toast.makeText(getActivity(), "Lỗi khi call api", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -267,7 +289,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
 
     @Override
     public void onProviderEnabled(@NonNull String provider) {
-
     }
 
     @Override

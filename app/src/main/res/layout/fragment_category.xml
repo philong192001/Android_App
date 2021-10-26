@@ -9,12 +9,14 @@
     <Button
         android:id="@+id/logout"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="221dp"
-        android:text="Đăng xuất" />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="@color/white"
+        android:text="Đăng xuất"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView"
@@ -22,120 +24,146 @@
         android:layout_height="46dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="238dp"
-        android:textSize="25dp"
-        android:layout_marginBottom="655dp"
-        android:text="Danh mục" />
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="614dp"
+        android:text="Danh mục"
+        android:textSize="25dp" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="69dp"
+        android:layout_width="58dp"
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="310dp"
-        android:layout_marginBottom="541dp"
-        app:srcCompat="@drawable/user" />
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="533dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/usera" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="541dp"
-        android:text="Thông tin cá nhân " />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="526dp"
+        android:backgroundTint="@color/white"
+        android:text="Thông tin cá nhân "
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="476dp"
-        android:text="Giám sát cách ly" />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="460dp"
+        android:backgroundTint="@color/white"
+        android:text="Giám sát cách ly"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="413dp"
-        android:text="Điều khoản sử dụng" />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="394dp"
+        android:backgroundTint="@color/white"
+        android:text="Điều khoản sử dụng"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="348dp"
-        android:text="Gửi hỏi đáp" />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="328dp"
+        android:backgroundTint="@color/white"
+        android:text="Gửi hỏi đáp"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="265dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="284dp"
-        android:text="Ứng dụng COVID BY BUGGER - Fanpage" />
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="262dp"
+        android:backgroundTint="@color/white"
+        android:text="Ứng dụng NCOVI - Fanpage"
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="69dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="270dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/facebooka" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="313dp"
+        android:layout_marginBottom="204dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/logouta" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="54dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="335dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/senda" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="52dp"
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="314dp"
-        android:layout_marginBottom="284dp"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="69dp"
-        android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="312dp"
-        android:layout_marginBottom="225dp"
-        app:srcCompat="@drawable/logout" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="69dp"
-        android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="315dp"
-        android:layout_marginBottom="351dp"
-        app:srcCompat="@drawable/send" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="69dp"
-        android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="312dp"
-        android:layout_marginBottom="481dp"
-        app:srcCompat="@drawable/shield" />
+        android:layout_marginBottom="467dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/shielda" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="69dp"
-        android:layout_height="54dp"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="316dp"
-        android:layout_marginBottom="415dp"
-        app:srcCompat="@drawable/rules" />
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="400dp"
+        android:background="@color/ncoviblue"
+        app:srcCompat="@drawable/texta" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="166dp"
+        android:text="Phiên bản 1.8.5" />
 
 
 </RelativeLayout>

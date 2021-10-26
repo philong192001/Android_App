@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.appcovid.custom_toast.CustomToast;
 import com.example.appcovid.network.AccountService;
 import com.example.appcovid.network.DeclareService;
 import com.example.appcovid.network.NetworkModule;
@@ -167,6 +168,7 @@ public class PatientActivity extends AppCompatActivity {
                 {
                     MessDto r = response.body();
                     ///Log.d("ALo ALo",dto.toString());
+                    Log.d("123",r.toString());
                     Toast.makeText(PatientActivity.this, "Khai báo thành công", Toast.LENGTH_LONG).show();
 
                     Intent intent = new Intent(PatientActivity.this, HomeActivity.class);
@@ -178,7 +180,7 @@ public class PatientActivity extends AppCompatActivity {
             public void onFailure(Call<MessDto> call, Throwable t) {
                 cbOK.setEnabled(false);
                 t.printStackTrace();
-                Toast.makeText(PatientActivity.this, "Lỗi khi khai bao y te", Toast.LENGTH_LONG).show();
+                Toast.makeText(PatientActivity.this, "Lỗi khi khai báo y te", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -189,7 +191,7 @@ public class PatientActivity extends AppCompatActivity {
         int isSelected = rdgtiepxuc.getCheckedRadioButtonId();
 
         if(isSelected == -1){
-            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            Toast.makeText(PatientActivity.this,"Bạn có tiếp xúc với trường hợp bện hoặc nghi ngờ mắc bệnh COVID-19 không ?",Toast.LENGTH_LONG).show();
             return false;
         }else{
             return  true;
@@ -199,7 +201,7 @@ public class PatientActivity extends AppCompatActivity {
         int isSelected = rdgdivetuvungdich.getCheckedRadioButtonId();
 
         if(isSelected == -1){
-            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            Toast.makeText(PatientActivity.this,"Bạn có đi về từ vùng dịch COVID-19 không ?",Toast.LENGTH_LONG).show();
             return false;
         }else{
             return  true;
@@ -209,7 +211,7 @@ public class PatientActivity extends AppCompatActivity {
         int isSelected = rdgtiepxucvungdich.getCheckedRadioButtonId();
 
         if(isSelected == -1){
-            Toast.makeText(PatientActivity.this,"Khai báo đi má",Toast.LENGTH_LONG).show();
+            Toast.makeText(PatientActivity.this,"Bạn có tiếp xúc với trường hợp đi về từ vùng dịch không ?",Toast.LENGTH_LONG).show();
             return false;
         }else{
             return  true;
@@ -218,7 +220,7 @@ public class PatientActivity extends AppCompatActivity {
     private boolean validate14days() {
         String val = etThongtin.getText().toString().trim();
         if (val.isEmpty()) {
-            etThongtin.setError("Field can not be empty");
+            etThongtin.setError("Không được để trống");
             return false;
         } else {
             etThongtin.setError(null);

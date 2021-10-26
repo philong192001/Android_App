@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.appcovid.network.dto.CreateAccDto;
+import com.example.appcovid.sqllite.DatabaseHelper;
 
 
 public class category_fragment extends Fragment {
@@ -60,6 +61,9 @@ public class category_fragment extends Fragment {
         logout = view.findViewById(R.id.logout);
 
         logout.setOnClickListener(v->{
+            DatabaseHelper db = new DatabaseHelper(getActivity());
+            db.deleteUser(100);
+            Log.d("LOGOUT",String.valueOf(dto.getId()));
             Intent intent = new Intent(getActivity(), MainActivity.class);
             startActivity(intent);
         });

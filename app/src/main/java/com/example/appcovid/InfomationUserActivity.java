@@ -84,7 +84,10 @@ public class InfomationUserActivity extends AppCompatActivity {
         address.setText(acc.address);
         phone.setText(acc.phone);
         gender.setChecked(acc.gender);
-        birthday.setText(convertDateToString(acc.birthDay));
+        if(acc.birthDay != null){
+            birthday.setText(convertDateToString(acc.birthDay));
+
+        }
         //Log.d("INFOOOOO" , acc.toString());
         btnUpdate.setOnClickListener(v -> UpdateAccount());
     }

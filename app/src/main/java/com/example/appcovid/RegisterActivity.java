@@ -22,6 +22,8 @@ import com.example.appcovid.network.dto.CreateAccDto;
 import com.example.appcovid.network.dto.DistrictDto;
 import com.example.appcovid.network.dto.MessDto;
 import com.example.appcovid.network.dto.ProvinceDto;
+import com.example.appcovid.sqllite.DatabaseHelper;
+import com.example.appcovid.sqllite.bean.Note;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -239,6 +241,16 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 Toast.makeText(RegisterActivity.this, "Lỗi khi đăng ký tài khoản", Toast.LENGTH_LONG).show();
             }
         });
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        String name = etFullname.getText().toString();
+        String cmt = etCmt.getText().toString();
+        String phone = etPhone.getText().toString();
+        String address = etAddress.getText().toString();
+
+        CreateAccDto dto1 = new CreateAccDto(name,cmt,phone,address);
+        db.addUser(dto1);
     }
 
     private boolean validateFullName(){
